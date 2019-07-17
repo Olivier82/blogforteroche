@@ -1,0 +1,26 @@
+.presentation {
+    background-image: url('/assets/img/background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    text-align: center;
+    height: 100%;
+    color: #ffffff;
+}
+
+.intro-text {
+    padding-top: 300px;
+    padding-bottom: 100px;
+}
+
+.intro-head {
+    font-size: 40px;
+    line-height: 40px;
+    margin-bottom: 25px;
+}
+
+.text-presentation {
+    font-size: 60px;
+    line-height: 75px;
+    margin-bottom: 50px;
+}
