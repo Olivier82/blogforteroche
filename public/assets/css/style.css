@@ -32,7 +32,14 @@
     padding: 2rem 0 2rem;
 }
 
-.form-post {
+#form-post {
     width: 800px;
     margin: auto;
+}
+
+/**** Gestion des erreurs ****/
+
+#titleError, #editorError {
+    color: 	#ff0000;
+    font-size: 12px;
 }
