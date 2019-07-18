@@ -24,3 +24,15 @@
     line-height: 75px;
     margin-bottom: 50px;
 }
+
+/**** Formulaire Création d'un article ****/
+
+.title-post {
+    margin: auto;
+    padding: 2rem 0 2rem;
+}
+
+.form-post {
+    width: 800px;
+    margin: auto;
+}
