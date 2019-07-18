@@ -22,6 +22,7 @@ validForm.addEventListener('click', function (e) {
     if(editorError) {
         document.getElementById('editorError').innerHTML = editorError;
     }
+
     alert('formulaire envoyé');
 
 });
