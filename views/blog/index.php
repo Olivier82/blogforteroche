@@ -3,7 +3,7 @@
     <div class="presentation">
         <div class="container">
             <div class="intro-text">
-                <div class="intro-head">Bienvenue sur mon blog</div>
+                <div class="intro-head"><?php echo $title; ?></div>
                 <div class="text-presentation">Retrouvez les épisodes de mon nouveau roman</div>
             </div>
         </div>

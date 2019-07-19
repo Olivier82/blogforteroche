@@ -9,21 +9,21 @@ validForm.addEventListener('click', function (e) {
 
     if (!titlePost.value) {
         titleError = 'Veuillez ajouter un titre à l\'article !';
+        return false;
     }
 
     if (!editor.value) {
         editorError = 'Veuillez ajouter un texte pour l\'article !';
+        return false;
     }
 
-    if(titleError) {
+    if (titleError) {
         document.getElementById('titleError').innerHTML = titleError;
     }
 
-    if(editorError) {
+    if (editorError) {
         document.getElementById('editorError').innerHTML = editorError;
     }
 
     alert('formulaire envoyé');
-
 });
-

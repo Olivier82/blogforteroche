@@ -1,5 +1,6 @@
 <?php
 require '../vendor/autoload.php';
+include('../controllers/BlogController.php');
 
 //Démarrage du router
 $router = new AltoRouter();
@@ -9,10 +10,12 @@ define('VIEW_PATH', dirname (__DIR__) . '/views');
 
 //Gestion des URL
 $router->map('GET', '/blog', function() {
-    require VIEW_PATH . '/blog/index.php';
+    $blogController = new BlogController(VIEW_PATH);
+    $blogController->indexAction();
 });
 
 $router->map('GET', '/blog/about', function() {
+    $blogController->aboutAction();
     require VIEW_PATH . '/blog/about.php';
 });
 
