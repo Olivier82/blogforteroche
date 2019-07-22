@@ -6,17 +6,17 @@
                 <div class="row">
                     <form action="#" method="post" id="form-post">
                         <div class="form-group">
-                            <label for="titlePost">Titre de l'article</label>
+                            <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <input type="title" class="form-control" id="titlePost" placeholder="Titre de l'article">
                             <div id="titleError"></div>
                         </div>
                         <div class="form-group">
-                            <label for="contentPost">Contenu de l'article</label>
+                            <label for="contentPost" class="heading-form">Contenu de l'article</label>
                         <div id="toolbar"></div>
                         <div id="editor"></div>
                         <div id="editorError"></div>
                         </div>
-                        <button type="submit" class="btn btn-primary" id="validForm">Publier l'article</button>
+                        <button type="submit" class="btn submitPost" id="validForm">Publier l'article</button>
                     </form>
                 </div>
             </div>

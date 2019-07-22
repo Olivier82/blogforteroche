@@ -1,3 +1,7 @@
+body {
+    background-color: #f3f3f3;
+}
+
 .presentation {
     background-image: url('/assets/img/background.jpg');
     background-repeat: no-repeat;
@@ -29,7 +33,20 @@
 
 .title-post {
     margin: auto;
-    padding: 2rem 0 2rem;
+    padding: 2rem 0 4rem;
+}
+
+.heading-form {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.form-control {
+    border: 1px solid #82bfab;
+}
+
+.form-group {
+    margin-bottom: 2rem;
 }
 
 #form-post {
@@ -37,9 +54,29 @@
     margin: auto;
 }
 
+#editor {
+    height: 300px;
+    background: #ffffff;
+    border: 1px solid #82bfab;
+}
+
+.submitPost {
+    background-color: #82bfab;
+    font-size: 1rem;
+    padding: 0.5rem 1.2rem;
+    margin-right: 1.2rem;
+    color: #ffffff;
+    border: none;
+}
+
+.submitPost:hover {
+    background-color: #343a40;
+    color: #ffffff;
+}
+
 /**** Gestion des erreurs ****/
 
 #titleError, #editorError {
     color: 	#ff0000;
-    font-size: 12px;
+    font-size: 14px;
 }

@@ -5,25 +5,25 @@ validForm.addEventListener('click', function (e) {
     var titleError;
     var editorError;
     var titlePost = document.getElementById('titlePost');
-    var editor = document.getElementById('editor');
+    var editor = document.querySelector('.ql-editor');
 
     if (!titlePost.value) {
         titleError = 'Veuillez ajouter un titre à l\'article !';
-        return false;
     }
 
-    if (!editor.value) {
+    if (editor.textContent === "") {
         editorError = 'Veuillez ajouter un texte pour l\'article !';
-        return false;
     }
 
     if (titleError) {
+        e.preventDefault();
         document.getElementById('titleError').innerHTML = titleError;
-    }
-
-    if (editorError) {
+        return false;
+    } else if (editorError) {
+        console.log(document.querySelector('.ql-editor').textContent);
         document.getElementById('editorError').innerHTML = editorError;
+        return false;
+    } else {
+        alert('Le formulaire a bien été envoyé !!!!');
     }
-
-    alert('formulaire envoyé');
 });
