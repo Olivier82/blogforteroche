@@ -1,17 +1,23 @@
 var validForm = document.getElementById('validForm');
+var formPost = document.getElementById('form-post');
+var data = new FormData(formPost);
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
     var titleError;
     var editorError;
-    var titlePost = document.getElementById('titlePost');
-    var editor = document.querySelector('.ql-editor');
+    var titlePostElt = document.getElementById('titlePost');
+    var editorElt = document.querySelector('.ql-editor');
+    var data = {
+        titlePost: document.getElementById('titlePost').value,
+        editor: document.querySelector('.ql-editor').textContent,
+    };
 
-    if (!titlePost.value) {
+    if (!titlePostElt.value) {
         titleError = 'Veuillez ajouter un titre à l\'article !';
     }
 
-    if (editor.textContent === "") {
+    if (editorElt.textContent === "") {
         editorError = 'Veuillez ajouter un texte pour l\'article !';
     }
 
@@ -20,10 +26,17 @@ validForm.addEventListener('click', function (e) {
         document.getElementById('titleError').innerHTML = titleError;
         return false;
     } else if (editorError) {
-        console.log(document.querySelector('.ql-editor').textContent);
         document.getElementById('editorError').innerHTML = editorError;
         return false;
     } else {
-        alert('Le formulaire a bien été envoyé !!!!');
+        alert('Formulaire envoyé !!!')
+        axios({
+            method: 'post',
+            url: '/formPost',
+            data : data,
+            })
+        .then(function (response) {
+            console.log(response);
+        });
     }
 });
