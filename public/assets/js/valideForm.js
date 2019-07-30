@@ -1,6 +1,5 @@
 var validForm = document.getElementById('validForm');
 var formPost = document.getElementById('form-post');
-var data = new FormData(formPost);
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -8,10 +7,8 @@ validForm.addEventListener('click', function (e) {
     var editorError;
     var titlePostElt = document.getElementById('titlePost');
     var editorElt = document.querySelector('.ql-editor');
-    var data = {
-        titlePost: document.getElementById('titlePost').value,
-        editor: document.querySelector('.ql-editor').textContent,
-    };
+    var titlePost = document.getElementById('titlePost').value;
+    var editor = document.querySelector('.ql-editor').textContent;
 
     if (!titlePostElt.value) {
         titleError = 'Veuillez ajouter un titre à l\'article !';
@@ -30,13 +27,15 @@ validForm.addEventListener('click', function (e) {
         return false;
     } else {
         alert('Formulaire envoyé !!!')
-        axios({
-            method: 'post',
-            url: '/formPost',
-            data : data,
-            })
+        axios.post('/formSubmit', {
+            'titlePost' : titlePost,
+            'editor' : editor,
+        })
         .then(function (response) {
-            console.log(response);
-        });
+            console.log(response.data);
+        })
+        .catch(function(error) {
+            console.log(error);
+        })
     }
 });

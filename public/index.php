@@ -1,6 +1,7 @@
 <?php
 require '../vendor/autoload.php';
 include('../controllers/BlogController.php');
+include('../controllers/AdminController.php');
 
 //Démarrage du router
 $router = new AltoRouter();
@@ -27,8 +28,15 @@ $router->map('GET', '/blog/contact', function() {
     require VIEW_PATH . '/blog/contact.php';
 });
 
-$router->map('GET', '/admin/post', function() {
-    require VIEW_PATH . '/admin/post.php';
+$router->map('GET', '/admin/newpost', function() {
+    require VIEW_PATH . '/admin/new_post.php';
+});
+
+$router->map('POST', '/formSubmit', function() {
+    $adminController = new AdminController();
+    $data = json_decode(file_get_contents('php://input'), true);
+    $data = (array)$data;
+    $adminController->formSubmit($data);
 });
 
 // URL De la demande actuelle

@@ -4,10 +4,10 @@
                     <h2 class="title-post">Rédiger un article</h2>
                 </div>
                 <div class="row">
-                    <form action="#" method="post" id="form-post">
+                    <form action="/formSubmit" method="post" id="form-post">
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
-                            <input type="title" class="form-control" id="titlePost" placeholder="Titre de l'article">
+                            <input type="title" name="titlepost" class="form-control" id="titlePost" placeholder="Titre de l'article">
                             <div id="titleError"></div>
                         </div>
                         <div class="form-group">

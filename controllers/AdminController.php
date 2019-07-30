@@ -2,11 +2,7 @@
 
 class AdminController {
 
-    public function formSubmit(Request $request) {
-        response()->json([$request->all()]);
+    public function formSubmit($data) {
+        dd($data->all());
     }
-
-
-
-
 }

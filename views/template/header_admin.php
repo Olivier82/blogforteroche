@@ -31,7 +31,13 @@
                         <a class="nav-link" href="/blog">Retourner au site <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/post">Poster un article </a>
+                        <a class="nav-link" href="/admin/newpost">Poster un article </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/allpost">Tous les articles</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/admin/allcomments">Commentaires</a>
                     </li>
                 </ul>
                 </div>

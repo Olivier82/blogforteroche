@@ -80,3 +80,14 @@ body {
     color: 	#ff0000;
     font-size: 14px;
 }
+
+/**** Footer ****/
+.contact {
+    background-color: #343a40;
+}
+
+.contact .section-heading {
+    color: #ffffff;
+    padding-top: 2rem;
+}
+
