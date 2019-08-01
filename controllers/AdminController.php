@@ -2,7 +2,7 @@
 
 class AdminController {
 
-    public function formSubmit($data) {
-        dd($data->all());
+    public function postSubmit(array $data) {
+        var_dump($_POST);
     }
 }

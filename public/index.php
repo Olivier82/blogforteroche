@@ -28,11 +28,11 @@ $router->map('GET', '/blog/contact', function() {
     require VIEW_PATH . '/blog/contact.php';
 });
 
-$router->map('GET', '/admin/newpost', function() {
-    require VIEW_PATH . '/admin/new_post.php';
+$router->map('GET', '/admin/addpost', function() {
+    require VIEW_PATH . '/admin/add_post.php';
 });
 
-$router->map('POST', '/formSubmit', function() {
+$router->map('POST', '/postsubmit', function() {
     $adminController = new AdminController();
     $data = json_decode(file_get_contents('php://input'), true);
     $data = (array)$data;
