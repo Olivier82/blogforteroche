@@ -27,12 +27,12 @@ validForm.addEventListener('click', function (e) {
         return false;
     } else {
         alert('Formulaire envoyé !!!')
-        axios.post('/formSubmit', {
+        axios.post('/addpost', {
             'titlePost' : titlePost,
             'editor' : editor,
         })
         .then(function (response) {
-            console.log(response.data);
+            console.log(response);
         })
         .catch(function(error) {
             console.log(error);

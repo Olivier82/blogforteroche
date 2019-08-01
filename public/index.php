@@ -32,11 +32,11 @@ $router->map('GET', '/admin/addpost', function() {
     require VIEW_PATH . '/admin/add_post.php';
 });
 
-$router->map('POST', '/postsubmit', function() {
+$router->map('POST', '/addpost', function() {
     $adminController = new AdminController();
     $data = json_decode(file_get_contents('php://input'), true);
     $data = (array)$data;
-    $adminController->formSubmit($data);
+    $adminController->addPost($data);
 });
 
 // URL De la demande actuelle
