@@ -29,6 +29,7 @@ body {
     margin-bottom: 50px;
 }
 
+
 /**** Formulaire Création d'un article ****/
 
 .title-post {
@@ -89,5 +90,9 @@ body {
 .contact .section-heading {
     color: #ffffff;
     padding-top: 2rem;
+}
+
+.contact .form-group textarea.form-control {
+    height: 250px;
 }
 

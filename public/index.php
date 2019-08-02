@@ -16,6 +16,7 @@ $router->map('GET', '/blog', function() {
 });
 
 $router->map('GET', '/blog/about', function() {
+    $blogController = new BlogController(VIEW_PATH);
     $blogController->aboutAction();
     require VIEW_PATH . '/blog/about.php';
 });
@@ -32,11 +33,9 @@ $router->map('GET', '/admin/addpost', function() {
     require VIEW_PATH . '/admin/add_post.php';
 });
 
-$router->map('POST', '/addpost', function() {
+$router->map('POST', '/admin/addpost', function() {
     $adminController = new AdminController();
-    $data = json_decode(file_get_contents('php://input'), true);
-    $data = (array)$data;
-    $adminController->addPost($data);
+    $adminController->addPost();
 });
 
 // URL De la demande actuelle

@@ -1,18 +1,24 @@
 <?php
 
 class AdminController {
-
     private $titlePost;
     private $editor;
 
-    public function addPost($data) {
+    public function addPost() {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $data = (array)$data;
 
-        $request = array(
+        // Appeler ton model
+        // => Insérer en base de donnée
+        // => renvoyé une valeur en cas d'erreur ou du succès
+        // Retour du controlleur: succès de l'insertion en bdd ou pas
+
+        $response = array(
             'title' => $data['titlePost'],
             'contenu'  => $data['editor'],
         );
-        extract($request);
-        echo "$title, $contenu";
 
-   }
+        header('Content-Type: application/json');
+        echo json_encode($response);
+    }
 }

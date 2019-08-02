@@ -4,7 +4,7 @@
                     <h2 class="title-post">Rédiger un article</h2>
                 </div>
                 <div class="row">
-                    <form action="/addpost" method="post" id="form-post">
+                    <form action="/admin/addpost" method="post" id="form-post">
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
@@ -12,15 +12,18 @@
                         </div>
                         <div class="form-group">
                             <label for="contentPost" class="heading-form">Contenu de l'article</label>
-                        <div id="toolbar"></div>
-                        <div id="editor"></div>
-                        <div id="editorError"></div>
+                            <div id="toolbar"></div>
+                            <div id="editor"></div>
+                            <div id="editorError"></div>
                         </div>
-                        <button type="submit" name="submit" class="btn submitPost" id="validForm">Publier l'article</button>
+                        <button type="submit" name="submit" class="btn submitPost" id="validForm">
+                            <span>Publier l'article</span>
+                        <div class="spinner-border spinner-border-sm text-primary d-none" id="spinner" role="status">
+                            <span class="sr-only">Loading...</span>
+                        </div>
+                        </button>
                     </form>
                 </div>
             </div>
 
 <?php require VIEW_PATH . '/template/footer_admin.php'; ?>
-
-
