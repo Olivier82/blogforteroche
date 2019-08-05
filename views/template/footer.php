@@ -37,10 +37,13 @@
         <div class="footer">
             <div class="container">
                 <div class="row align-items-center">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <div class="copyright">Copyright © 2019 Jean Forteroche</div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-4">
+                        <div class="link-admin">Administration du site</div>
+                    </div>
+                    <div class="col-md-4">
                         <ul class="social-buttons">
                             <li class="inline-buttons">
                                 <a href="#">
