@@ -19,4 +19,12 @@ class BlogController {
     public function aboutAction() {
         require $this->viewPath . '/blog/about.php';
     }
+
+    public function postAction() {
+        require $this->viewPath . '/blog/post.php';
+    }
+
+    public function contactAction() {
+        require $this->viewPath .'/blog/contact.php';
+    }
 }

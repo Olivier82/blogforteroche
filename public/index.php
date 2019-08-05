@@ -22,12 +22,12 @@ $router->map('GET', '/blog/about', function() {
 
 $router->map('GET', '/blog/post', function() {
     $blogController = new BlogController(VIEW_PATH);
-    $blogController = postAction();
+    $blogController -> postAction();
 });
 
 $router->map('GET', '/blog/contact', function() {
     $blogController = new BlogController(VIEW_PATH);
-    $blogController = contactAction();
+    $blogController -> contactAction();
 });
 
 $router->map('GET', '/admin/addpost', function() {
