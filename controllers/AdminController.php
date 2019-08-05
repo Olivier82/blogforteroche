@@ -1,5 +1,7 @@
 <?php
 
+require_once '../models/Post.php';
+
 class AdminController {
     private $titlePost;
     private $editor;
@@ -20,5 +22,9 @@ class AdminController {
 
         header('Content-Type: application/json');
         echo json_encode($response);
+
+        // Appel du model Post
+        $Post = new Post();
+        $validatePost = $Post->validateForm();
     }
 }
