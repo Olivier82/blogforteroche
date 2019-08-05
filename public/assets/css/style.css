@@ -82,14 +82,15 @@ body {
     margin-top: 0.5rem;
 }
 
-/**** Footer ****/
+/**** Contact ****/
 .contact {
     background-color: #343a40;
+    padding: 70px 0;
 }
 
 .contact .section-heading {
     color: #ffffff;
-    padding-top: 2rem;
+    padding-top: 1rem;
 }
 
 .contact h2.section-heading {
@@ -121,3 +122,31 @@ body {
     padding: 15px 50px;
 }
 
+
+/**** Footer ****/
+
+.footer {
+    padding: 20px 0;
+    text-align: center;
+}
+
+.copyright {
+    font-size: 18px;
+}
+
+ul.social-buttons {
+    margin-bottom: 0;
+}
+
+.inline-buttons {
+    display: inline-block;
+}
+
+li.inline-buttons {
+    margin-right: 2rem;
+    font-size: 25px;
+}
+
+.fa {
+    color: #82bfab;
+}

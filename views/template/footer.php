@@ -34,6 +34,34 @@
                 </div>
             </div>
         </div>
+        <div class="footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="copyright">Copyright © 2019 Jean Forteroche</div>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="social-buttons">
+                            <li class="inline-buttons">
+                                <a href="#">
+                                <i class="fa fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li class="inline-buttons">
+                                <a href="#">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li class="inline-buttons">
+                                <a href="#">
+                                    <i class="fa fa-linkedin"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- JAVASCRIPT & JQUERY -->
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     </body>
