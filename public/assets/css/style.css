@@ -92,7 +92,32 @@ body {
     padding-top: 2rem;
 }
 
-.contact .form-group textarea.form-control {
+.contact h2.section-heading {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+
+.contact textarea.form-control {
     height: 250px;
+}
+
+.contact input.form-control {
+    padding: 30px;
+}
+
+.btn-primary {
+    background-color: #82bfab;
+    border-color: #82bfab;
+}
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+    background-color: #82bfab;
+    border-color: #82bfab;
+}
+
+.btn-xl {
+    font-size: 18px;
+    padding: 15px 50px;
 }
 

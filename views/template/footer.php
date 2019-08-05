@@ -3,7 +3,6 @@
                 <div class="row">
                     <div class="col-lg-12 text-center">
                         <h2 class="section-heading">Me contacter</h2>
-                        <h3 class="sub-headling">N'hésitez pas à me contacter</h3>
                     </div>
                 </div>
                 <div class="row">
@@ -22,9 +21,12 @@
                                     </div>
                                 </div>
                                 <div class="col-md-6">
-                                    <div clas="form-group">
+                                    <div class="form-group">
                                         <textarea class="form-control" id="message" placeholder="Votre message"></textarea>
                                     </div>
+                                </div>
+                                <div class="col-lg-12 text-center">
+                                    <button id="sendContact" class="btn btn-primary btn-xl text-uppercase" type="submit">Envoyer</button>
                                 </div>
                             </div>
                         </form>
