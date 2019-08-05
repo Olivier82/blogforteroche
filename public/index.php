@@ -18,15 +18,16 @@ $router->map('GET', '/blog', function() {
 $router->map('GET', '/blog/about', function() {
     $blogController = new BlogController(VIEW_PATH);
     $blogController->aboutAction();
-    require VIEW_PATH . '/blog/about.php';
 });
 
 $router->map('GET', '/blog/post', function() {
-    require VIEW_PATH . '/blog/post.php';
+    $blogController = new BlogController(VIEW_PATH);
+    $blogController = postAction();
 });
 
 $router->map('GET', '/blog/contact', function() {
-    require VIEW_PATH . '/blog/contact.php';
+    $blogController = new BlogController(VIEW_PATH);
+    $blogController = contactAction();
 });
 
 $router->map('GET', '/admin/addpost', function() {

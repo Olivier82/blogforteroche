@@ -15,4 +15,8 @@ class BlogController {
         extract($result);
         require $this->viewPath . '/blog/index.php';
     }
+
+    public function aboutAction() {
+        require $this->viewPath . '/blog/about.php';
+    }
 }
