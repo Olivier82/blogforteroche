@@ -1,8 +1,6 @@
 var validForm = document.getElementById('validForm');
 var formPost = document.getElementById('form-post');
 var spinner = document.getElementById('spinner');
-var titleError = document.getElementById('titleError');
-var editorError = document.getElementById('editorError');
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -10,19 +8,23 @@ validForm.addEventListener('click', function (e) {
     var editorElt = document.querySelector('.ql-editor');
     var titlePost = document.getElementById('titlePost').value;
     var editor = document.querySelector('.ql-editor').innerHTML;
+    var titleError = document.getElementById('titleError');
+    var editorError = document.getElementById('editorError');
 
     if (!titlePostElt.value) {
         titleError.classList.remove('d-none');
         titleError = 'Veuillez ajouter un titre à l\'article !';
     } else {
         titleError.classList.add('d-none');
+        titleError = '';
     }
 
     if (!editorElt.textContent.length) {
         editorError.classList.remove('d-none');
-        editorError.innerHTML = 'Veuillez ajouter un texte pour l\'article !';
+        editorError = 'Veuillez ajouter un texte pour l\'article !';
     } else {
         editorError.classList.add('d-none');
+        editorError = '';
     }
 
     if (titleError) {
@@ -32,7 +34,7 @@ validForm.addEventListener('click', function (e) {
         document.getElementById('editorError').innerHTML = editorError;
         return;
     } else {
-        validForm.classList.add('disabled');
+        validForm.classList.remove('disabled');
         spinner.classList.remove('d-none');
         axios.post(formPost.getAttribute('action'), {
             titlePost: titlePost,
@@ -41,6 +43,8 @@ validForm.addEventListener('click', function (e) {
         .then(function (response) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
+            titlePostElt.value = '';
+            editorElt.textContent = '';
             console.log(response.data);
         })
         .catch(function(error) {

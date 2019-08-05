@@ -8,13 +8,13 @@
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
-                            <div class="alert alert-danger d-none" id="titleError" role="alert"></div>
+                            <div class="alert alert-danger alertTitle d-none" id="titleError" role="alert"></div>
                         </div>
                         <div class="form-group">
                             <label for="contentPost" class="heading-form">Contenu de l'article</label>
                             <div id="toolbar"></div>
                             <div id="editor"></div>
-                            <div class="alert alert-danger d-none" id="editorError" role="alert"></div>
+                            <div class="alert alert-danger alert-editor d-none" id="editorError" role="alert"></div>
                         </div>
                         <button type="submit" name="submit" class="btn submitPost" id="validForm">
                             <span>Publier l'article</span>
