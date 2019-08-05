@@ -2,6 +2,8 @@ body {
     background-color: #f3f3f3;
 }
 
+/**** Homepage ****/
+
 .presentation {
     background-image: url('/assets/img/background.jpg');
     background-repeat: no-repeat;
@@ -29,6 +31,13 @@ body {
     margin-bottom: 50px;
 }
 
+/**** About ****/
+
+h2.about-intro {
+    font-size: 40px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
 
 /**** Formulaire Création d'un article ****/
 
