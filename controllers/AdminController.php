@@ -25,6 +25,6 @@ class AdminController {
 
         // Appel du model Post
         $Post = new Post();
-        $validatePost = $Post->validateForm();
+        $validateForm = $Post->validateForm($data);
     }
 }
