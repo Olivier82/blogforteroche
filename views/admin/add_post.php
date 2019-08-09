@@ -8,7 +8,8 @@
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <div class="alert alert-danger titleError d-none" id="titleError" role="alert"></div>
-                            <input type="title" name="titlePost" class="form-control" id="titlePost" value ="<?php echo $row['titlePost'];?>" placeholder="Titre de l'article">
+                            <div class="error"></div>
+                            <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
                         </div>
                         <div class="form-group">
                             <label for="contentPost" class="heading-form">Contenu de l'article</label>

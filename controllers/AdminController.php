@@ -2,7 +2,9 @@
 
 require_once '../models/Post.php';
 
+
 class AdminController {
+    private $data;
     private $titlePost;
     private $editor;
 
@@ -27,4 +29,6 @@ class AdminController {
         $Post = new Post();
         $validateForm = $Post->validateForm($data);
     }
+
 }
+
