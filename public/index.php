@@ -10,22 +10,22 @@ $router = new AltoRouter();
 define('VIEW_PATH', dirname (__DIR__) . '/views');
 
 //Gestion des URL
-$router->map('GET', '/blog', function() {
+$router->map('GET', '/', function() {
     $blogController = new BlogController(VIEW_PATH);
     $blogController->indexAction();
 });
 
-$router->map('GET', '/blog/about', function() {
+$router->map('GET', '/about', function() {
     $blogController = new BlogController(VIEW_PATH);
     $blogController->aboutAction();
 });
 
-$router->map('GET', '/blog/post', function() {
+$router->map('GET', '/post', function() {
     $blogController = new BlogController(VIEW_PATH);
-    $blogController -> postAction();
+    $blogController->postAction();
 });
 
-$router->map('GET', '/blog/contact', function() {
+$router->map('GET', '/contact', function() {
     $blogController = new BlogController(VIEW_PATH);
     $blogController -> contactAction();
 });

@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 class BlogController {
     private $viewPath;

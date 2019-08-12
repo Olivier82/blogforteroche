@@ -1,44 +1,32 @@
 <?php
-
 class Post {
-
-    private $bdd;
     private $id;
     private $title;
     private $content;
     private $date;
-    private $data = array();
-    private $errors;
-    // Validation des données
 
-    public function __construct() {
-        $this->bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+    // Validation des données
+    public function validateForm($data): array {
+        $errors = array();
+        $title = trim(strip_tags($data['titlePost']));
+        $content = trim(strip_tags($data['editor']));
+
+        if (strlen($title) <= 8) {
+            $errors['title'] = 'texte trop court !';
+        }
+
+        if (strlen($content) <= 250) {
+            $errors['content'] = 'L\'article est trop court !';
+        }
+
+        return $errors;
     }
 
-    public function validateForm($data) {
-        if($_SERVER["REQUEST_METHOD"] == "POST") {
-            $title = $data['titlePost'];
-            $content = $data['editor'];
+    public function createPost($data): bool {
+        $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+        $title = trim(strip_tags($data['titlePost']));
+        $content = trim(strip_tags($data['editor'], '<p><a>'));
 
-            if(strlen(trim($title)) <= 8){
-                $this->errors['title'] = 'texte trop court !';
-            }
-
-            if(!preg_match('/^[a-zA-Z0-9\s]+$/', $title)) {
-                $this->errors = 'Le titre ne peut contenir que des lettres et des chiffres !';
-            }
-
-            if($title ==''){
-                $this->errors = 'Veuillez ajouter un titre !';
-            }
-
-            if($content =='') {
-                $this->errors = 'Veuillez ajouter un texte à l\'article !';
-            }
-
-            if(strlen(trim($content)) <= 250){
-                $this->errors = 'L\'article est trop court !';
-            }
-        }
+        return true;
     }
 }
