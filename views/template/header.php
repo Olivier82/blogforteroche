@@ -35,16 +35,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/blog">Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog/about">Qui suis je ? </a>
+                        <a class="nav-link" href="/about">Qui suis je ? </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog/post">Episodes</a>
+                        <a class="nav-link" href="/post">Episodes</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/blog/contact">Me Contacter</a>
+                        <a class="nav-link" href="/contact">Me Contacter</a>
                     </li>
                 </ul>
                 </div>
