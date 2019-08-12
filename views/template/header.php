@@ -22,7 +22,7 @@
     <body>
         <!--- NAVIGATION --->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <a href="/blog" class="navbar-brand">
+            <a href="/" class="navbar-brand">
                 <img src="/assets/img/logo.svg" width="280" height="50" alt="logo blog">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-expanded="false" aria-controls="navbar">

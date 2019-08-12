@@ -25,7 +25,7 @@ class Post {
     public function createPost($data): bool {
         $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
         $title = trim(strip_tags($data['titlePost']));
-        $content = trim(strip_tags($data['editor'], '<p><a>'));
+        $content = trim(strip_tags($data['editor'], '<p><a><h1><h2><strong><em><u><s><img>'));
 
         return true;
     }

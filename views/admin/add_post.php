@@ -8,7 +8,7 @@
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <div class="alert alert-danger titleError d-none" id="titleError" role="alert"></div>
-                            <div class="error"></div>
+                            <div class="error"><?php $errors; ?></div>
                             <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
                         </div>
                         <div class="form-group">

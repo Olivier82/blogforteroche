@@ -41,7 +41,9 @@
                         <div class="copyright">Copyright © 2019 Jean Forteroche</div>
                     </div>
                     <div class="col-md-4">
-                        <div class="link-admin">Administration du site</div>
+                        <div class="link-admin">
+                            <a href="/admin">Administration du site</a>
+                        </div>
                     </div>
                     <div class="col-md-4">
                         <ul class="social-buttons">
