@@ -40,17 +40,17 @@ validForm.addEventListener('click', function (e) {
             titlePost: titlePost,
             editor: editor,
         })
-        .then(function (response) {
+        .then(function(response) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
             titlePostElt.value = '';
             editorElt.textContent = '';
             console.log(response.data);
         })
-        .catch(function(error) {
+        .catch(function(errors) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
-            console.log(error);
+            console.log(errors.reponse.data);
         })
     }
 });

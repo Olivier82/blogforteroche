@@ -24,6 +24,7 @@ class AdminController {
             ));
 
             return;
+
         }
 
         // => Insérer en base de donnée

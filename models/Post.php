@@ -23,10 +23,23 @@ class Post {
     }
 
     public function createPost($data): bool {
-        $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+        try
+        {
+            $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+        }
+        catch (Exception $e)
+        {
+            die('Erreur : ' .$e->getMessage());
+        }
         $title = trim(strip_tags($data['titlePost']));
         $content = trim(strip_tags($data['editor'], '<p><a><h1><h2><strong><em><u><s><img>'));
 
+        $req = $bdd->prepare('INSERT INTO posts(title, content) VALUES(:title, :content)');
+        $req->execute(array(
+            'title' => $title,
+            'content' => $content,
+        ));
+        echo 'Article a été ajouté avec succés.';
         return true;
     }
 }
