@@ -1,7 +1,7 @@
 <?php require VIEW_PATH . '/template/header_admin.php'; ?>
             <div class="container">
                 <div class="row">
-                    <h2 class="title-post">Rédiger un article</h2>
+                    <h2 class="admin-heading">Rédiger un article</h2>
                 </div>
                 <div class="row">
                     <form action="/admin/addpost" method="post" id="form-post">

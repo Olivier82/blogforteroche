@@ -34,6 +34,10 @@ $router->map('GET', '/admin/addpost', function() {
     require VIEW_PATH . '/admin/add_post.php';
 });
 
+$router->map('GET', '/admin/listingpost', function() {
+    require VIEW_PATH . '/admin/listing_post.php';
+});
+
 $router->map('POST', '/admin/addpost', function() {
     $adminController = new AdminController();
     $adminController->addPost();

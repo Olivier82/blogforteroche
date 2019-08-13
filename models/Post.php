@@ -38,10 +38,10 @@ class Post {
         $date_post = date("Y-m-d H:i:s");
         // Préparation de la requête d'ajout d'un post
         $req = $bdd->prepare("INSERT INTO `posts`(`title`, `content`, `date_post`) VALUES(:title, :content, :date_post)");
-        // Exécution requête avec un tableau
         $req->bindValue(':title', $title, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':date_post', $date_post, PDO::PARAM_STR);
+        // Exécution requête avec un tableau
         $req->execute();
         echo 'Article a été ajouté avec succés.';
         return true;

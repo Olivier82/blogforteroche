@@ -1,5 +1,6 @@
 body {
     background-color: #f3f3f3;
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
 }
 
 /**** Homepage ****/
@@ -15,6 +16,7 @@ body {
 }
 
 .intro-text {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     padding-top: 300px;
     padding-bottom: 100px;
 }
@@ -31,6 +33,12 @@ body {
     margin-bottom: 50px;
 }
 
+h2.section-heading {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 35px;
+}
+
 /**** About ****/
 
 h2.about-intro {
@@ -39,14 +47,20 @@ h2.about-intro {
     margin-bottom: 15px;
 }
 
-/**** Formulaire Création d'un article ****/
+/**** Administration ****/
 
-.title-post {
+.admin-heading {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 36px;
     margin: auto;
     padding: 2rem 0 4rem;
 }
 
+/**** Formulaire création d'un article ****/
+
 .heading-form {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 20px;
     font-weight: bold;
 }
@@ -104,6 +118,7 @@ h2.about-intro {
 }
 
 .contact h2.section-heading {
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 50px;
