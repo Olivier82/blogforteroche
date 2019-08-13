@@ -1,6 +1,7 @@
 var validForm = document.getElementById('validForm');
 var formPost = document.getElementById('form-post');
 var spinner = document.getElementById('spinner');
+var errorsElt = document.getElementById('errors');
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -45,12 +46,15 @@ validForm.addEventListener('click', function (e) {
             validForm.classList.remove('disabled');
             titlePostElt.value = '';
             editorElt.textContent = '';
-            console.log(response.data);
+            console.log(response.data)
         })
         .catch(function(errors) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
-            console.log(errors.reponse.data);
+            errorsElt.classList.remove('d-none');
+            if (errors.reponse) {
+                console.log('Il y a une erreur !');
+            }
         })
     }
 });

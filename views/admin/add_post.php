@@ -7,7 +7,7 @@
                     <form action="/admin/addpost" method="post" id="form-post">
                         <div class="form-group">
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
-                            <div class="alert alert-danger d-none"><?php $errors; ?></div>
+                            <div class="alert alert-danger d-none" id="errors"><?php $errors; ?></div>
                             <div class="alert alert-danger titleError d-none" id="titleError" role="alert"></div>
                             <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
                         </div>
@@ -24,6 +24,16 @@
                         </div>
                         </button>
                     </form>
+                    <div class="toast" id ="toast" role="alert" aria-live="assertive" aria-atomix="true">
+                        <div class="toast-header">
+                            <strong class="mr-auto">Ajout d'un article</strong>
+                            <button type="button" class="ml-2 mb-A close" data-dismiss="toast" aria-label="Close">
+                            </button>
+                        </div>
+                        <div class="body">
+                            Test du toast
+                        </div>
+                    </div>
                 </div>
             </div>
 

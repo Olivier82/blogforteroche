@@ -3,7 +3,7 @@ class Post {
     private $id;
     private $title;
     private $content;
-    private $date;
+    private $date_post;
 
     // Validation des données
     public function validateForm($data): array {
@@ -26,19 +26,23 @@ class Post {
         try
         {
             $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
-        catch (Exception $e)
+        catch (PDOException $e)
         {
             die('Erreur : ' .$e->getMessage());
         }
+
         $title = trim(strip_tags($data['titlePost']));
         $content = trim(strip_tags($data['editor'], '<p><a><h1><h2><strong><em><u><s><img>'));
-
-        $req = $bdd->prepare('INSERT INTO posts(title, content) VALUES(:title, :content)');
-        $req->execute(array(
-            'title' => $title,
-            'content' => $content,
-        ));
+        $date_post = date("Y-m-d H:i:s");
+        // Préparation de la requête d'ajout d'un post
+        $req = $bdd->prepare("INSERT INTO `posts`(`title`, `content`, `date_post`) VALUES(:title, :content, :date_post)");
+        // Exécution requête avec un tableau
+        $req->bindValue(':title', $title, PDO::PARAM_STR);
+        $req->bindValue(':content', $content, PDO::PARAM_STR);
+        $req->bindValue(':date_post', $date_post, PDO::PARAM_STR);
+        $req->execute();
         echo 'Article a été ajouté avec succés.';
         return true;
     }
