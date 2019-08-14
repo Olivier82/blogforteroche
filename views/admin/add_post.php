@@ -6,8 +6,8 @@
                 <div class="row">
                     <form action="/admin/addpost" method="post" id="form-post">
                         <div class="form-group">
+                        <div class="alert alert-danger errors d-none" id="errors" role="alert"><ul></ul></div>
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
-                            <div class="alert alert-danger d-none" id="errors"><?php $errors; ?></div>
                             <div class="alert alert-danger titleError d-none" id="titleError" role="alert"></div>
                             <input type="title" name="titlePost" class="form-control" id="titlePost" placeholder="Titre de l'article">
                         </div>

@@ -23,7 +23,7 @@ class AdminController {
                 'errors' => $errors,
             ));
 
-            return;
+            return $errors;
 
         }
 

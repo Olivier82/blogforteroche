@@ -12,11 +12,11 @@ class Post {
         $content = trim(strip_tags($data['editor']));
 
         if (strlen($title) <= 8) {
-            $errors['title'] = 'texte trop court !';
+            $errors['title'] = 'Le titre ne comporte pas assez de caractères !';
         }
 
         if (strlen($content) <= 250) {
-            $errors['content'] = 'L\'article est trop court !';
+            $errors['content'] = 'L\'article ne comporte pas assez de caractères !';
         }
 
         return $errors;

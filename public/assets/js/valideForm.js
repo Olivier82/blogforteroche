@@ -2,6 +2,7 @@ var validForm = document.getElementById('validForm');
 var formPost = document.getElementById('form-post');
 var spinner = document.getElementById('spinner');
 var errorsElt = document.getElementById('errors');
+var titleError = document.getElementById('titleError');
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -44,17 +45,23 @@ validForm.addEventListener('click', function (e) {
         .then(function(response) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
-            titlePostElt.value = '';
-            editorElt.textContent = '';
-            console.log(response.data)
-        })
-        .catch(function(errors) {
-            spinner.classList.add('d-none');
-            validForm.classList.remove('disabled');
-            errorsElt.classList.remove('d-none');
-            if (errors.reponse) {
-                console.log('Il y a une erreur !');
+
+            if (response.data.errors) {
+                errors.classList.remove('d-none');
+                var msgErrors = [response.data.errors];
+                msgErrors.forEach(function(e) {
+                    errors.innerHTML = e.title;
+                });
+            } else {
+                titlePostElt.value = '';
+                editorElt.textContent = '';
             }
-        })
+            })
+        .catch(function(errors) {
+                spinner.classList.add('d-none');
+                validForm.classList.remove('disabled');
+                errorsElt.classList.remove('d-none');
+                console.log(errors);
+            })
     }
 });
