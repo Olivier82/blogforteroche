@@ -29,10 +29,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/blog">Retourner au site <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/">Retourner au site <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/addpost">Poster un article </a>
+                        <a class="nav-link" href="/admin/addpost">Poster un article</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/admin/listingpost">Tous les articles</a>
