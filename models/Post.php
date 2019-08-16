@@ -22,11 +22,11 @@ class Post {
         return $errors;
     }
 
+    // Création d'un article
     public function createPost($data): bool {
         try
         {
             $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         }
         catch (PDOException $e)
         {
@@ -45,5 +45,24 @@ class Post {
         $req->execute();
         echo 'Article a été ajouté avec succés.';
         return true;
+    }
+
+    // Récupération de tous les articles
+    public function getPosts() {
+        try
+        {
+            $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
+        }
+        catch (PDOException $e)
+        {
+            die('Erreur : ' .$e->getMessage());
+        }
+        // Préparation de la requête
+        $req = $bdd->prepare("SELECT `id`, `title` FROM `posts` ORDER BY `date_post`");
+        // Exécution de la requête
+        $req->execute();
+        // Récupération des données
+        $results = $req->fetchAll();
+        var_dump($results);
     }
 }

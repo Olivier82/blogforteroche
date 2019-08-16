@@ -33,4 +33,13 @@ class AdminController {
         $response = array('result' => $result);
         echo json_encode($response);
     }
+
+    // Récupération des articles
+    public function allPost() {
+
+        $post = new Post;
+        $allPost = $post->getPosts();
+
+
+    }
 }
