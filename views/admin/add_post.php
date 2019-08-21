@@ -17,7 +17,7 @@
                             <div id="toolbar"></div>
                             <div id="editor"></div>
                         </div>
-                        <button type="submit" name="submit" class="btn submitPost" id="validForm">
+                        <button type="submit" name="submit" class="btn submitPost btn-lg btn-block" id="validForm">
                             <span>Publier l'article</span>
                         <div class="spinner-border spinner-border-sm text-primary d-none" id="spinner" role="status">
                             <span class="sr-only">Loading...</span>

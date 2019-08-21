@@ -38,8 +38,8 @@ class AdminController {
     public function allPost() {
 
         $post = new Post;
-        $allPost = $post->getPosts();
-
-
+        $listposts = $post->getPosts();
+        extract($listposts);
+        require_once('../views/admin/listing_post.php');
     }
 }
