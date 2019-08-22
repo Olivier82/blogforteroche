@@ -44,6 +44,12 @@ $router->map('GET', '/admin/listingpost', function() {
     $adminController->allPost();
 });
 
+$router->map('GET', '/admin/editpost/[i:id]', function() {
+    $adminController = new AdminController();
+    $adminController->updatePost();
+    require VIEW_PATH . '/admin/edit_post.php';
+});
+
 
 // URL De la demande actuelle
 $match = $router->match();

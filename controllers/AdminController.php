@@ -42,4 +42,11 @@ class AdminController {
         extract($listposts);
         require_once('../views/admin/listing_post.php');
     }
+
+    //Update des articles
+    public function updatePost() {
+        $post = new Post;
+        $updatepost = $post->updatePost();
+        var_dump($updatepost);
+    }
 }

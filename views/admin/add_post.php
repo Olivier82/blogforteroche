@@ -24,16 +24,6 @@
                         </div>
                         </button>
                     </form>
-                    <div class="toast" id ="toast" role="alert" aria-live="assertive" aria-atomix="true">
-                        <div class="toast-header">
-                            <strong class="mr-auto">Ajout d'un article</strong>
-                            <button type="button" class="ml-2 mb-A close" data-dismiss="toast" aria-label="Close">
-                            </button>
-                        </div>
-                        <div class="body">
-                            Test du toast
-                        </div>
-                    </div>
                 </div>
             </div>
 

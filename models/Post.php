@@ -59,12 +59,32 @@ class Post {
 
         $bdd = $this->bddConnect();
         // Préparation de la requête
-        $req = $bdd->prepare('SELECT `title`, DATE_FORMAT(`date_post`, \'%d/%m/%Y à %Hh%imin%ss\') AS `date_post_fr`  FROM `posts` ORDER BY `date_post` DESC');
+        $req = $bdd->prepare('SELECT `title`, DATE_FORMAT(`date_post`, \'%d/%m/%Y\') AS `date_post_fr`  FROM `posts` ORDER BY `date_post` DESC');
         // Exécution de la requête
         $req->execute();
         // Récupération des données
         $listposts = $req->fetchAll(PDO::FETCH_ASSOC);
         return $listposts;
+    }
+
+    //Mise à jour d'un article
+
+    public function updatePost() {
+
+        $bdd = $this->bddConnect();
+        //Préparation de la requête
+        $req = $bdd->prepare('UPDATE posts SET title=:title, content=:content WHERE id=:id');
+        $req->bindParam(':title', $title, PDO::PARAM_STR);
+        $req->bindParam(':content', $content, PDO::PARAM_STR);
+        $req->bindParam(':id', $id, PDO::PARAM_STR);
+        //Exécution de la requête
+        $req->execute(array(
+            'title'=> $title,
+            'content' => $content,
+            'id' => $id,
+        ));
+        var_dump($req);
+
     }
 
 }
