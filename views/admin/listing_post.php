@@ -20,7 +20,7 @@
                                     <td><?php echo $value['date_post_fr'];?></td>
                                     <td><?php echo $value['title']; ?></td>
                                     <td>
-                                        <a href="editpost/1" class="btn btn-success">Editer</a>
+                                        <a href="editpost/<?php echo $value['id']; ?>" class="btn btn-success">Editer</a>
                                         <a href="#" class="btn btn-danger"
                                         onclick="return confirm('Confirmez-vous la suppresion de cet article ?')">
                                         Supprimer</a>

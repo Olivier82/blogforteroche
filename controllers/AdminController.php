@@ -27,16 +27,14 @@ class AdminController {
 
         }
 
-        // => Insérer en base de donnée
-        // Retour du controlleur: succès de l'insertion en bdd ou pas
         $result = $post->createPost($data);
         $response = array('result' => $result);
         echo json_encode($response);
+        return $response;
     }
 
     // Récupération des articles
     public function allPost() {
-
         $post = new Post;
         $listposts = $post->getPosts();
         extract($listposts);
@@ -44,9 +42,10 @@ class AdminController {
     }
 
     //Update des articles
-    public function updatePost() {
+    public function editPost() {
         $post = new Post;
-        $updatepost = $post->updatePost();
-        var_dump($updatepost);
+        $editpost = $post->editPost();
+        extract($editpost);
+        require_once('../views/admin/edit_post.php');
     }
 }

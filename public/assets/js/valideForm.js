@@ -3,6 +3,7 @@ var formPost = document.getElementById('form-post');
 var spinner = document.getElementById('spinner');
 var errorsElt = document.getElementById('errors');
 var titleError = document.getElementById('titleError');
+var postSuccess = document.getElementById('success');
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -53,6 +54,7 @@ validForm.addEventListener('click', function (e) {
                     errors.innerHTML = e.title;
                 });
             } else {
+                postSuccess.classList.remove('d-none');
                 titlePostElt.value = '';
                 editorElt.textContent = '';
             }

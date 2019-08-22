@@ -45,12 +45,12 @@ class Post {
         $content = trim(strip_tags($data['editor'], '<p><a><h1><h2><strong><em><u><s><img>'));
         $date_post = date("Y-m-d H:i:s");
         // Préparation de la requête d'ajout d'un post
-        $req = $bdd->prepare("INSERT INTO `posts`(`title`, `content`, `date_post`) VALUES(:title, :content, :date_post)");
+        $req = $bdd->prepare('INSERT INTO posts(title, content, date_post) VALUES(:title, :content, :date_post)');
         $req->bindValue(':title', $title, PDO::PARAM_STR);
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':date_post', $date_post, PDO::PARAM_STR);
         $req->execute();
-        echo 'Article a été ajouté avec succés.';
+
         return true;
     }
 
@@ -59,7 +59,7 @@ class Post {
 
         $bdd = $this->bddConnect();
         // Préparation de la requête
-        $req = $bdd->prepare('SELECT `title`, DATE_FORMAT(`date_post`, \'%d/%m/%Y\') AS `date_post_fr`  FROM `posts` ORDER BY `date_post` DESC');
+        $req = $bdd->prepare('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr  FROM posts ORDER BY date_post DESC');
         // Exécution de la requête
         $req->execute();
         // Récupération des données
@@ -69,22 +69,16 @@ class Post {
 
     //Mise à jour d'un article
 
-    public function updatePost() {
+    public function editPost() {
 
         $bdd = $this->bddConnect();
         //Préparation de la requête
-        $req = $bdd->prepare('UPDATE posts SET title=:title, content=:content WHERE id=:id');
-        $req->bindParam(':title', $title, PDO::PARAM_STR);
-        $req->bindParam(':content', $content, PDO::PARAM_STR);
-        $req->bindParam(':id', $id, PDO::PARAM_STR);
+        $req = $bdd->prepare('SELECT id, title, content, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr FROM posts WHERE id = :id');
+        $req->bindValue(':id', 10, PDO::PARAM_INT);
         //Exécution de la requête
-        $req->execute(array(
-            'title'=> $title,
-            'content' => $content,
-            'id' => $id,
-        ));
-        var_dump($req);
-
+        $req->execute();
+        $editpost = $req->fetch(PDO::FETCH_ASSOC);
+        return $editpost;
     }
 
 }

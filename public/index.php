@@ -46,8 +46,7 @@ $router->map('GET', '/admin/listingpost', function() {
 
 $router->map('GET', '/admin/editpost/[i:id]', function() {
     $adminController = new AdminController();
-    $adminController->updatePost();
-    require VIEW_PATH . '/admin/edit_post.php';
+    $adminController->editPost();
 });
 
 
