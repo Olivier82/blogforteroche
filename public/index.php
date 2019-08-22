@@ -49,6 +49,11 @@ $router->map('GET', '/admin/editpost/[i:id]', function($id) {
     $adminController->editPost($id);
 });
 
+$router->map('POST', '/admin/editpost/[i:id]', function($id) {
+    $adminController = new AdminController();
+    $adminController->updatePost($id);
+});
+
 
 // URL De la demande actuelle
 $match = $router->match();

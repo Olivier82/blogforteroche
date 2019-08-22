@@ -81,4 +81,11 @@ class Post {
             return $editpost;
     }
 
+    public function updatePost($id) {
+
+        $bdd = $this->bddConnect();
+        //Préparation de la requête
+        $req = $bdd->prepare('UPDATE posts SET title = :title, content =:content, date_post = :date_post WHERE id = :id');
+        $req->execute();
+    }
 }

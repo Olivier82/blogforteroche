@@ -48,4 +48,9 @@ class AdminController {
             extract($editpost);
             require_once('../views/admin/edit_post.php');
     }
+
+    public function updatePost($id) {
+        $post = new Post;
+        $updatepost = $post->updatePost($id);
+    }
 }
