@@ -42,10 +42,10 @@ class AdminController {
     }
 
     //Update des articles
-    public function editPost() {
-        $post = new Post;
-        $editpost = $post->editPost();
-        extract($editpost);
-        require_once('../views/admin/edit_post.php');
+    public function editPost($id) {
+            $post = new Post;
+            $editpost = $post->editPost($id);
+            extract($editpost);
+            require_once('../views/admin/edit_post.php');
     }
 }

@@ -69,16 +69,16 @@ class Post {
 
     //Mise à jour d'un article
 
-    public function editPost() {
+    public function editPost($id) {
 
-        $bdd = $this->bddConnect();
-        //Préparation de la requête
-        $req = $bdd->prepare('SELECT id, title, content, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr FROM posts WHERE id = :id');
-        $req->bindValue(':id', 10, PDO::PARAM_INT);
-        //Exécution de la requête
-        $req->execute();
-        $editpost = $req->fetch(PDO::FETCH_ASSOC);
-        return $editpost;
+            $bdd = $this->bddConnect();
+            //Préparation de la requête
+            $req = $bdd->prepare('SELECT title, content FROM posts WHERE id = :id');
+            $req->bindParam(':id', $id, PDO::PARAM_INT);
+            //Exécution de la requête
+            $req->execute();
+            $editpost = $req->fetch(PDO::FETCH_ASSOC);
+            return $editpost;
     }
 
 }

@@ -44,9 +44,9 @@ $router->map('GET', '/admin/listingpost', function() {
     $adminController->allPost();
 });
 
-$router->map('GET', '/admin/editpost/[i:id]', function() {
+$router->map('GET', '/admin/editpost/[i:id]', function($id) {
     $adminController = new AdminController();
-    $adminController->editPost();
+    $adminController->editPost($id);
 });
 
 
