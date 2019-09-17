@@ -40,9 +40,9 @@ class AdminController {
 
     // Update des articles
     // Renommer en getPost
-    public function editPost(int $id) {
+    public function getPost(int $id) {
         $post = new Post();
-        $editpost = $post->editPost($id);
+        $editpost = $post->getPostById($id);
         extract($editpost);
         require_once('../views/admin/edit_post.php');
     }

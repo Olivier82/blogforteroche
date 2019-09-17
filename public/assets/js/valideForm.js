@@ -7,6 +7,7 @@ var titleError = document.getElementById('titleError');
 var editorError = document.getElementById('editorError');
 var titlePostElt = document.getElementById('titlePost');
 var editorElt = document.querySelector('.ql-editor');
+var errorsElt = document.getElementById('errors');
 
 validForm.addEventListener('click', function (e) {
     e.preventDefault();
@@ -62,7 +63,8 @@ validForm.addEventListener('click', function (e) {
                         }
 
                         if (key === 'id') {
-                            // errorsElt.innerHTML = msgErrors[key];
+                            errorsElt.classList.remonve('d-none');
+                            errorsElts.innerHTML = msgErrors[key];
                         }
                     });
             } else {

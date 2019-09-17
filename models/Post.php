@@ -72,8 +72,7 @@ class Post {
     }
 
     //Mise à jour d'un article
-    // Renommer en getPostById
-    public function editPost(int $id): array {
+    public function getPostById(int $id): array {
         $bdd = $this->bddConnect();
         //Préparation de la requête
         $req = $bdd->prepare('SELECT title, content FROM posts WHERE id = :id');
