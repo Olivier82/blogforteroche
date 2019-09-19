@@ -105,4 +105,15 @@ class Post {
         $req->bindParam(':id',$id, PDO::PARAM_STR);
         return $req->execute();
     }
+
+    //Récupération de 3 articles pour la homepage
+
+    public function homePosts() {
+        $bdd = $this->bddConnect();
+        $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts ORDER BY id DESC LIMIT 3');
+         // Exécution de la requête
+         $req->execute();
+         // Récupération des données
+         return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
 }

@@ -13,6 +13,10 @@ class BlogController {
         );
 
         extract($result);
+
+        $post = new Post();
+        $lastposts = $post->homePosts();
+        extract($lastposts);
         require $this->viewPath . '/blog/index.php';
     }
 
@@ -27,4 +31,5 @@ class BlogController {
     public function contactAction() {
         require $this->viewPath .'/blog/contact.php';
     }
+
 }

@@ -7,7 +7,7 @@
                         <table class="table table-striped">
                             <thead class="thead-dark">
                                 <tr>
-                                <th scope="col">ID</th>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Date de l'article</th>
                                     <th scope="col">Titre de l'article</th>
                                     <th scope="col">Actions</th>
@@ -18,7 +18,7 @@
                             foreach($listposts as $value):
                             ?>
                                 <tr>
-                                <td><?php echo $value['id'];?></td>
+                                    <td><?php echo $value['id'];?></td>
                                     <td><?php echo $value['date_post_fr'];?></td>
                                     <td><?php echo $value['title']; ?></td>
                                     <td>
@@ -34,6 +34,7 @@
                                                         <h5>Confirmation suppression article</h5>
                                                     </div>
                                                     <div class="modal-body">
+                                                        <input id="deletePostId" type="hidden" value="<?php echo $value['id']; ?>" />
                                                         <p>Voulez vous confirmer la suppression de cet article ? </p>
                                                     </div>
                                                     <div class="modal-footer">

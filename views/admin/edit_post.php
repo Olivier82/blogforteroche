@@ -18,7 +18,7 @@
                                     <div id="toolbar"></div>
                                     <div id="editor" value="<?php echo $editpost['content']; ?>"></div>
                                 </div>
-                                <input id="editPostId" value="<?php echo $editpost['id']; ?>" />
+                                <input id="editPostId" type="hidden" value="<?php echo $editpost['id']; ?>" />
                                 <button type="submit" name="submit" class="btn submitPost btn-lg btn-block" id="validForm">
                                     <span>Mise à jour de l'article</span>
                                 <div class="spinner-border spinner-border-sm text-primary d-none" id="spinner" role="status">
