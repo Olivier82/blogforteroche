@@ -30,6 +30,10 @@ $router->map('GET', '/contact', function() {
     $blogController -> contactAction();
 });
 
+$router->map('GET', '/admin', function() {
+    require VIEW_PATH . '/admin/index.php';
+});
+
 $router->map('GET', '/admin/addpost', function() {
     require VIEW_PATH . '/admin/add_post.php';
 });
@@ -54,6 +58,10 @@ $router->map('POST', '/admin/editpost/[i:id]', function() {
     $adminController->updatePost($data);
 });
 
+$router->map('POST', '/admin/deletepost/[i:id]', function($id) {
+    $adminController = new AdminController();
+    $adminController->deletePost($id);
+});
 
 // URL De la demande actuelle
 $match = $router->match();

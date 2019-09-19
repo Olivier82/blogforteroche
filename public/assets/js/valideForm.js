@@ -15,13 +15,10 @@ validForm.addEventListener('click', function (e) {
     var idPost = null;
     if (onEdit) {
         idPost = parseInt(editPostIdEl.value, 10);
-    }
+    };
 
     var titlePost = titlePostElt.value;
     var editor = editorElt.innerHTML;
-
-    titleError.classList.add('d-none');
-    editorError.classList.add('d-none');
 
     if (!titlePostElt.value) {
         titleError.classList.remove('d-none');
@@ -42,11 +39,11 @@ validForm.addEventListener('click', function (e) {
     axios.post(formPost.getAttribute('action'), {
             titlePost: titlePost,
             editor: editor,
+            idPost: idPost,
         })
         .then(function(response) {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
-
             if (response.data.errors) {
                 var msgErrors = response.data.errors;
 
@@ -76,7 +73,7 @@ validForm.addEventListener('click', function (e) {
         .catch(function() {
             spinner.classList.add('d-none');
             validForm.classList.remove('disabled');
-            // errors.innerHTML = 'Une erreur est survenue';
-            // errorsElt.classList.remove('d-none');
+            errorsElt.classList.remove('d-none');
+            errorsElt.innerHTML = 'Une erreur est survenue';
         });
 });

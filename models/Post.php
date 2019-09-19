@@ -61,8 +61,7 @@ class Post {
         $bdd = $this->bddConnect();
 
         // Préparation de la requête
-        // A changer pour utiliser "query"
-        $req = $bdd->prepare('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr  FROM posts ORDER BY date_post DESC');
+        $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr  FROM posts ORDER BY date_post DESC');
 
         // Exécution de la requête
         $req->execute();
@@ -75,8 +74,8 @@ class Post {
     public function getPostById(int $id): array {
         $bdd = $this->bddConnect();
         //Préparation de la requête
-        $req = $bdd->prepare('SELECT title, content FROM posts WHERE id = :id');
-        $req->bindParam(':id', $id, PDO::PARAM_INT);
+        $req = $bdd->prepare('SELECT id, title, content FROM posts WHERE id = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
         //Exécution de la requête
         $req->execute();
         $editpost = $req->fetch(PDO::FETCH_ASSOC);
@@ -96,6 +95,14 @@ class Post {
         $req->bindValue(':content', $content, PDO::PARAM_STR);
         $req->bindValue(':date_post', $date_post, PDO::PARAM_STR);
         $req->bindValue(':id', $id, PDO::PARAM_INT);
+        return $req->execute();
+    }
+
+    // Suppression d'un article
+    public function deletePost($id) {
+        $bdd = $this->bddConnect();
+        $req = $bdd->prepare('DELETE FROM posts WHERE id = :id LIMIT 1');
+        $req->bindParam(':id',$id, PDO::PARAM_STR);
         return $req->execute();
     }
 }

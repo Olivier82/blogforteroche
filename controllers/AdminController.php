@@ -39,7 +39,6 @@ class AdminController {
     }
 
     // Update des articles
-    // Renommer en getPost
     public function getPost(int $id) {
         $post = new Post();
         $editpost = $post->getPostById($id);
@@ -67,5 +66,11 @@ class AdminController {
         echo json_encode(array(
             'result' => $post->updatePost($data)
         ));
+    }
+
+    // Suppression d'un article
+    public function deletePost($id) {
+        $post = new Post();
+        $deletePost = $post->deletePost($id);
     }
 }
