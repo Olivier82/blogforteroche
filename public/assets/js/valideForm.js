@@ -15,7 +15,7 @@ validForm.addEventListener('click', function (e) {
     var idPost = null;
     if (onEdit) {
         idPost = parseInt(editPostIdEl.value, 10);
-    };
+    }
 
     var titlePost = titlePostElt.value;
     var editor = editorElt.innerHTML;

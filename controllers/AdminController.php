@@ -33,8 +33,12 @@ class AdminController {
     // Récupération des articles
     public function allPost() {
         $post = new Post();
-        $listposts = $post->getPosts();
-        extract($listposts);
+        extract(array(
+            'listposts' => $post->getPosts(),
+            'scripts' => array(
+                '/assets/js/deletepost.js'
+            )
+        ));
         require_once('../views/admin/listing_post.php');
     }
 
@@ -60,7 +64,6 @@ class AdminController {
             ));
 
             return $errors;
-
         }
 
         echo json_encode(array(

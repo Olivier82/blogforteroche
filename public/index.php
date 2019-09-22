@@ -53,9 +53,9 @@ $router->map('GET', '/admin/editpost/[i:id]', function($id) {
     $adminController->getPost($id);
 });
 
-$router->map('POST', '/admin/editpost/[i:id]', function() {
+$router->map('POST', '/admin/editpost', function() {
     $adminController = new AdminController();
-    $adminController->updatePost($data);
+    $adminController->updatePost();
 });
 
 $router->map('POST', '/admin/deletepost/[i:id]', function($id) {

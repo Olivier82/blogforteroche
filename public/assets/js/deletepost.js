@@ -1,11 +1,22 @@
-var deletePost = document.getElementById('delete-post');
-var idDeletePost = document.getElementById('deletePostId');
+var btnDeletePost = document.getElementById('delete-post');
+var baseUrlDeletePostEl = document.getElementById('baseUrlDeletePost');
+var selectedIdEl = document.getElementById('selectedId')
 
-deletePost.addEventListener('click', function(e) {
-    axios.delete('admin/delete/$id' {
-        idPost: idPost,
+document.querySelectorAll('.btnOpenDeleteModal')
+    .forEach(function (btnOpenDeleteModalEl) {
+        btnOpenDeleteModalEl.addEventListener('click', function () {
+            var id = btnOpenDeleteModalEl.getAttribute('data-id')
+            selectedIdEl.value = id
+        })
     })
-    .then(function(response) {
-        console.log(response);
-    })
+
+btnDeletePost.addEventListener('click', function() {
+    var selectedId = selectedIdEl.value
+    var baseUrlDeletePost = baseUrlDeletePostEl.value
+    var url = baseUrlDeletePost + selectedId
+
+    axios.post(url)
+        .then(function(response) {
+            console.log(response);
+        })
 })

@@ -27,5 +27,4 @@
                     </form>
                 </div>
             </div>
-
 <?php require VIEW_PATH . '/template/footer_admin.php'; ?>

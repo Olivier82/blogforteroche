@@ -25,8 +25,8 @@ class Post {
         $title = trim(strip_tags($data['titlePost']));
         $content = trim(strip_tags($data['editor']));
 
-        if (isset($data['id']) && !empty($data['id']) && !is_numeric($data['id'])) {
-            $errors['id'] = 'L\' ID doit être un nombre';
+        if (isset($data['idPost']) && !empty($data['idPost']) && !is_numeric($data['idPost'])) {
+            $errors['idPost'] = 'L\' ID doit être un nombre';
         }
 
         if (strlen($title) <= 8) {
@@ -87,7 +87,7 @@ class Post {
         $title = trim(strip_tags($data['titlePost']));
         $content = trim(strip_tags($data['editor'], '<p><a><h1><h2><strong><em><u><s><img>'));
         $date_post = date('Y-m-d H:i:s');
-        $id = intval($data['id']);
+        $id = intval($data['idPost']);
 
         //Préparation de la requête
         $req = $bdd->prepare('UPDATE posts SET title = :title, content = :content, date_post = :date_post WHERE id = :id');
@@ -112,8 +112,8 @@ class Post {
         $bdd = $this->bddConnect();
         $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts ORDER BY id DESC LIMIT 3');
          // Exécution de la requête
-         $req->execute();
-         // Récupération des données
-         return $req->fetchAll(PDO::FETCH_ASSOC);
+        $req->execute();
+        // Récupération des données
+        return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 }
