@@ -13,7 +13,7 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="icon" href="/assets/img/favicon.ico">
         <?php
-            if (isset($styles) && count($style) > 0) {
+            if (isset($styles) && count($styles) > 0) {
                 foreach($styles as $style) {
                     echo '<link rel="stylesheet" href="' . $style . '">';
                 }

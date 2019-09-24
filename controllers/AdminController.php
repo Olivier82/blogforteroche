@@ -6,6 +6,18 @@ class AdminController {
     private $titlePost;
     private $editor;
 
+    public function addPostScripts(){
+        $scripts = array(
+            'scripts' => array(
+                '/assets/js/toolbar.js',
+                '/assets/js/valideForm.js'
+            ));
+        extract($scripts);
+
+        require_once('../views/admin/add_post.php');
+    }
+
+
     public function addPost() {
         $data = json_decode(file_get_contents('php://input'), true);
         $data = (array)$data;
@@ -26,7 +38,7 @@ class AdminController {
         }
 
         $result = $post->createPost($data);
-        $response = array('result' => $result);
+        $response = array ('result' => $result);
         echo json_encode($response);
     }
 
@@ -45,8 +57,13 @@ class AdminController {
     // Update des articles
     public function getPost(int $id) {
         $post = new Post();
-        $editpost = $post->getPostById($id);
-        extract($editpost);
+        extract(array(
+            'editpost' => $post->getPostById($id),
+            'scripts' => array(
+                '/assets/js/toolbar.js',
+                '/assets/js/valideForm.js'
+            )
+        ));
         require_once('../views/admin/edit_post.php');
     }
 
@@ -67,12 +84,17 @@ class AdminController {
         }
 
         echo json_encode(array(
-            'result' => $post->updatePost($data)
+            'result' => $post->updatePost($data),
         ));
     }
 
     // Suppression d'un article
     public function deletePost($id) {
+        $scripts = array(
+            'scripts' => array(
+                '/assets/js/deletepost.js'
+            ));
+        extract($scripts);
         $post = new Post();
         $deletePost = $post->deletePost($id);
     }

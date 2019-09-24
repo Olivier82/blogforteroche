@@ -116,4 +116,13 @@ class Post {
         // Récupération des données
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    public function singlePost($id) {
+        $bdd = $this->bddConnect();
+        $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts');
+        //Exécution de la requête
+        $req->execute();
+        // Récupération des données
+
+    }
 }
