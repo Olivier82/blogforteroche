@@ -78,8 +78,7 @@ class Post {
         $req->bindValue(':id', $id, PDO::PARAM_INT);
         //Exécution de la requête
         $req->execute();
-        $editpost = $req->fetch(PDO::FETCH_ASSOC);
-        return $editpost;
+        return $req->fetch(PDO::FETCH_ASSOC);
     }
 
     public function updatePost($data) {
@@ -119,10 +118,10 @@ class Post {
 
     public function singlePost($id) {
         $bdd = $this->bddConnect();
-        $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts');
-        //Exécution de la requête
-        $req->execute();
-        // Récupération des données
-
+        $req = $bdd->prepare('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts WHERE id = :id');
+        $req->bindValue(':id', $id, PDO::PARAM_INT);
+         //Exécution de la requête
+         $req->execute();
+        return $req->fetch(PDO::FETCH_ASSOC);
     }
 }

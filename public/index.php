@@ -30,8 +30,8 @@ $router->map('GET', '/contact', function() {
     $blogController -> contactAction();
 });
 
-$router->map('GET', '/singlepost', function($id) {
-    $blogController = new BlogController();
+$router->map('GET', '/post/[i:id]', function($id) {
+    $blogController = new BlogController(VIEW_PATH);
     $blogController->singlePost($id);
 });
 

@@ -2,7 +2,7 @@
 <div class="containter">
     <div class="row">
         <div class="title-post">
-            <h1><?php echo singlePost['title']; ?></h1>
+            <h1><?php echo $singlePost['title']; ?></h1>
         </div>
     </div>
 

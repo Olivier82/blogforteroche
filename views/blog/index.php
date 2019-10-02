@@ -22,7 +22,7 @@
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $post['title']; ?></h5>
                             <p class="card-text"><?php echo substr($post['content'], 0 ,500) . " ...";?></p>
-                            <a href="#" class=" btn btn-primary">Lire la suite...</a>
+                            <a href="post/<?php echo $post['id']; ?>" class=" btn btn-primary">Lire la suite...</a>
                         </div>
                     </div>
                 </div>

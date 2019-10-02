@@ -32,4 +32,12 @@ class BlogController {
         require $this->viewPath .'/blog/contact.php';
     }
 
+    public function singlePost(int $id) {
+        $post = new Post();
+        extract( array(
+            'singlepost' => $post->singlePost($id),
+        ));
+        require $this->viewPath .'/blog/post.php';
+    }
+
 }

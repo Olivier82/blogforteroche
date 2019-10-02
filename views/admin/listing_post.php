@@ -46,7 +46,7 @@
                 <p>Voulez vous confirmer la suppression de cet article ? </p>
             </div>
             <div class="modal-footer">
-                <button type="button" id="delete-post" class="btn btn-danger">Confirmer</button>
+                <button type="button" id="delete-post" class="btn btn-danger" data-dismiss="modal">Confirmer</button>
                 <button type="button" class="btn btn-success" data-dismiss="modal">Annuler</button>
             </div>
         </div>
