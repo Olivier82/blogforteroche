@@ -1,7 +1,7 @@
 <?php require VIEW_PATH . '/template/header.php'; ?>
 <div class="containter">
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-6 col-md-8 mx-auto">
             <div class="post-heading">
                 <h1><?php echo $singlepost['title']; ?></h1>
                 <div class="date-post">
@@ -11,14 +11,14 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="col-lg-6 col-md-8 mx-auto">
             <div class="post-content">
                 <?php echo $singlepost['content']; ?>
             </div>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-12 mx-auto">
+        <div class="col-lg-6 col-md-8 col-sm-12 mx-auto">
             <div class="comment-wrapper">
                 <div class="panel panel-info">
                     <div class="panel-heading">
@@ -28,6 +28,7 @@
                         <textarea class="form-control" placeholder="Votre commentaire..." rows="3"></textarea>
                         <br>
                         <button type="button" class="btn btn-primary">Poster votre commentaire</button>
+                        <hr>
                     </div>
                 </div>
             </div>
