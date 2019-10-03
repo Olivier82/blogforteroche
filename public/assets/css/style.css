@@ -104,6 +104,48 @@ h2.about-intro {
     margin: 30px;
 }
 
+/**** Commentaire ****/
+
+.comment-wrapper {
+    margin: 50px;
+}
+.comment-wrapper .panel-body {
+    max-height: 650px;
+    overflow: auto;
+}
+
+.panel {
+    margin-bottom: 20px;
+    background-color: #f3f3f3;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.panel-info {
+    border-color:#5ba79d;
+}
+
+.panel-info>.panel-heading {
+    background-color: #5ba79d;
+    border-color: #5ba79d;
+}
+
+.panel-heading {
+    padding: 10px 15px;
+    border-bottom: 1px solid;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+}
+
+.panel-heading h4 {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    color: #ffffff;
+}
+
+.panel-body {
+    padding: 15px;
+}
+
 /**** Administration ****/
 
 .admin-heading {
