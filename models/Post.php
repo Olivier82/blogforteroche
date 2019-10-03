@@ -1,23 +1,11 @@
 <?php
-class Post {
+require_once '../models/BaseModel.php';
+
+class Post extends BaseModel {
     private $id;
     private $title;
     private $content;
     private $date_post;
-
-     //Connection à la base de données
-     public function bddConnect() {
-        try
-        {
-            $bdd = new PDO('mysql:host=localhost:3306;dbname=blog_bdd;charsetutf8', 'root', 'root');
-            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            return $bdd;
-        }
-        catch (PDOException $e)
-        {
-            die('Erreur : ' .$e->getMessage());
-        }
-    }
 
     // Validation des données
     public function validateForm($data): array {

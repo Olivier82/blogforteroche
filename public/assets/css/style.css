@@ -146,6 +146,10 @@ h2.about-intro {
     padding: 15px;
 }
 
+#author {
+    margin-bottom: 10px;
+}
+
 hr {
     margin-top: 20px;
     margin-bottom: 20px;

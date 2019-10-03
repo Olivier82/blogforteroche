@@ -1,5 +1,9 @@
 {
     "require": {
         "altorouter/altorouter": "1.2.0"
+    },
+    "config": {
+        "disable-tls": true,
+        "secure-http": false
     }
 }

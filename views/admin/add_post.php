@@ -6,7 +6,7 @@
                 <div class="row">
                     <form action="/admin/addpost" method="post" id="form-post">
                         <div class="form-group">
-                        <div class="alert alert-danger errors d-none" id="errors" role="alert"><ul></ul></div>
+                        <div class="alert alert-danger errors d-none" id="errors" role="alert"></div>
                         <div class="alert alert-success d-none" id="success" role="alert">L'article a bien été enregistré</div>
                             <label for="titlePost" class="heading-form">Titre de l'article</label>
                             <div class="alert alert-danger titleError d-none" id="titleError" role="alert"></div>
