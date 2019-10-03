@@ -79,6 +79,31 @@ h2.about-intro {
     margin-bottom: 15px;
 }
 
+/**** Page article ****/
+
+.post-heading {
+    padding: 100px;
+}
+
+.post-heading h1 {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-style: bold;
+    font-size: 80px;
+}
+
+.date-post {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.post-content {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    line-height: 1.5;
+    margin: 30px;
+}
+
 /**** Administration ****/
 
 .admin-heading {
