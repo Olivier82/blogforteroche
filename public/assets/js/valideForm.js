@@ -66,8 +66,10 @@ validForm.addEventListener('click', function (e) {
                     });
             } else {
                 postSuccess.classList.remove('d-none');
-                titlePostElt.value = '';
-                editorElt.textContent = '';
+                if (!OnEdit){
+                    titlePostElt.value = '';
+                    editorElt.textContent = '';
+                }
             }
         })
         .catch(function() {
