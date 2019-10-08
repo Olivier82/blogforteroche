@@ -21,7 +21,7 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title"><?php echo $post['title']; ?></h5>
-                            <p class="card-text"><?php echo substr($post['content'], 0 ,500) . " ...";?></p>
+                            <p class="card-text"><?php echo substr(strip_tags($post['content']), 0 ,500) . " ...";?></p>
                             <a href="post/<?php echo $post['id']; ?>" class=" btn btn-primary">Lire la suite...</a>
                         </div>
                     </div>
