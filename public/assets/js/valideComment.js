@@ -6,13 +6,13 @@ var commentElt = document.getElementById('comment');
 var commentSuccess = document.getElementById('commentSuccess');
 var authorError = document.getElementById('authorError');
 var commentError = document.getElementById('commentError');
-var idPostElt = document.getElementById('commentPostId');
+var idPostElt = document.getElementById('postId');
 
 validComment.addEventListener('click', function (e) {
     e.preventDefault();
     var author = authorElt.value;
     var comment = commentElt.value;
-    var idpost = idPostElt.value;
+    var idPost = parseInt(idPostElt.value, 10);
 
     if (!authorElt.value) {
         authorError.classList.remove('d-none');
@@ -33,7 +33,7 @@ validComment.addEventListener('click', function (e) {
     axios.post(formComment.getAttribute('action'), {
         author: author,
         comment: comment,
-        idpost: idpost,
+        idPost: idPost,
     })
     .then(function(response) {
         spinner.classList.add('d-none');

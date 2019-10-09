@@ -35,7 +35,7 @@ $router->map('GET', '/post/[i:id]', function($id) {
     $blogController->singlePost($id);
 });
 
-$router->map('POST', '/post', function() {
+$router->map('POST', '/post/[i:id]', function() {
     $blogController = new BlogController(VIEW_PATH);
     $blogController->addComment();
 });

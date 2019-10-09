@@ -26,12 +26,12 @@
                     </div>
                     <div class="panel-body">
                         <form action ="/post" method="post" id="form-comment">
-                        <input id="commentPostId" type="hidden" value="<?php echo $singlepost['id']; ?>" />
+                        <input id="postId" type="hidden" value="<?php echo $singlepost['id']; ?>" />
                             <div class="alert alert-danger authorError d-none" id="authorError" role="alert"></div>
                             <div class="alert alert-success d-none" id="commentSucces" role="alert"></div>
                                 <input type ="author" name="author" class="form-control" id="author" placeholder="Votre nom">
                                 <div class="alert alert-danger commentError d-none" id="commentError" role="alert"></div>
-                                    <textarea class="form-control" id ="comment" placeholder="Votre commentaire..." rows="3"></textarea>
+                                    <textarea class="form-control" id ="comment" placeholder="Votre commentaire..." rows="5"></textarea>
                             <br>
                             <button type="submit"  name="submit" class="btn btn-primary" id="validComment">
                                 <span>Poster votre commentaire</span>

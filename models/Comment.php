@@ -18,7 +18,7 @@ class Comment extends BaseModel {
             $errors['author'] = 'Le nom ne comporte pas assez de caractères !';
         }
 
-        if (strlen($comment) <= 50) {
+        if (strlen($comment) <= 10) {
             $errors['comment'] = 'Le commentaire ne comporte pas assez de caractères !';
         }
 
@@ -31,6 +31,7 @@ class Comment extends BaseModel {
         $author = trim(strip_tags($data['author']));
         $comment = trim(strip_tags($data['comment']));
         $date_comment = date("Y-m-d H:i:s");
+        $id_post = intval($data['idPost']);
 
         // Préparation de la requête d'ajout d'un commentaire
         $req = $bdd->prepare('INSERT INTO post_comment(author, comment, date_comment, id_post) VALUES(:author, :comment, :date_comment, :id_post');

@@ -68,7 +68,6 @@ class BlogController {
         $result = $comment->createComment($data);
         $response = array ('result' => $result);
         echo json_encode($response);
-        var_dump($response);
 
         require $this->viewPath .'/blog/post.php';
     }
