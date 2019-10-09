@@ -35,6 +35,11 @@ $router->map('GET', '/post/[i:id]', function($id) {
     $blogController->singlePost($id);
 });
 
+$router->map('POST', '/post/addcomment', function() {
+    $blogController = new BlogController(VIEW_PATH);
+    $blogController->addComment();
+});
+
 $router->map('GET', '/admin', function() {
     require VIEW_PATH . '/admin/index.php';
 });

@@ -69,5 +69,13 @@
         </div>
         <!-- JAVASCRIPT & JQUERY -->
         <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+        <?php
+            if (isset($scripts) && count($scripts) > 0) {
+                foreach($scripts as $script) {
+                    echo '<script src="' . $script . '"></script>';
+                }
+            }
+        ?>
     </body>
 <html>

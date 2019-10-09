@@ -25,14 +25,19 @@
                         <h4>Ajouter un Commentaire</h4>
                     </div>
                     <div class="panel-body">
-                        <form action ="#" method="post" id="form-comment">
-                            <div class="alert alert danger authorError d-none" id="authorError" role="alert"></div>
+                        <form action ="/post/addcomment" method="post" id="form-comment">
+                            <div class="alert alert-danger authorError d-none" id="authorError" role="alert"></div>
                             <div class="alert alert-success d-none" id="commentSucces" role="alert"></div>
-                            <input type ="author" name="author" class="form-control" id="author" placeholder="Votre nom">
-                            <div class="alert alert-danger commentError d-none" id="commentError" role="alert"></div>
-                            <textarea class="form-control" id ="comment" placeholder="Votre commentaire..." rows="3"></textarea>
+                                <input type ="author" name="author" class="form-control" id="author" placeholder="Votre nom">
+                                <div class="alert alert-danger commentError d-none" id="commentError" role="alert"></div>
+                                    <textarea class="form-control" id ="comment" placeholder="Votre commentaire..." rows="3"></textarea>
                             <br>
-                            <button type="button" class="btn btn-primary" id="validComment">Poster votre commentaire</button>
+                            <button type="submit"  name="submit" class="btn btn-primary" id="validComment">
+                                <span>Poster votre commentaire</span>
+                            <div class="spinner-border spinner-border-sm text-primary d-none" id="spinner" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                            </button>
                             <hr>
                         </form>
                     </div>

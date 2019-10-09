@@ -36,7 +36,36 @@ class BlogController {
         $post = new Post();
         extract( array(
             'singlepost' => $post->singlePost($id),
+            'scripts'  => array(
+                '/assets/js/valideComment.js'
+            )
         ));
+        require $this->viewPath .'/blog/post.php';
+    }
+
+    public function addComment() {
+        $date = json_decode(file_get_content('php://input'), true);
+        $data = (array)$data;
+
+        header('Content-type: application/json');
+
+        // Appel du model Comment
+        $comment = new Comment();
+        $errors = $comments->validateComment($data);
+
+        if (count($errors) > 0) {
+            echo json_encode(array(
+                'errors' => $errprs,
+            ));
+
+            return $errors;
+
+        }
+
+        $result = $comment->createComment($data);
+        $response = array ('result' => $result);
+        echo json_encode($response);
+
         require $this->viewPath .'/blog/post.php';
     }
 
