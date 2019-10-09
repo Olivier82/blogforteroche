@@ -2,6 +2,11 @@
 require_once '../models/BaseModel.php';
 
 class Comment extends BaseModel {
+    private $id;
+    private $id_post;
+    private $author;
+    private $comment;
+    private $date_comment;
 
     // Validation des données
     public function validateComment($data): array {
@@ -23,15 +28,16 @@ class Comment extends BaseModel {
     // Création d'un commentaire
     public function createComment($data): bool {
         $bdd = $this->bddConnect();
-        $authors = trim(strip_tags($data['author']));
-        $comment = trim(strip_tags($date['comment']));
+        $author = trim(strip_tags($data['author']));
+        $comment = trim(strip_tags($data['comment']));
         $date_comment = date("Y-m-d H:i:s");
 
         // Préparation de la requête d'ajout d'un commentaire
-        $req = $bdd->prepare('INSERT INTO post_comment(author, comment, date_comment) VALUES(:author, :comment, :date_comment');
+        $req = $bdd->prepare('INSERT INTO post_comment(author, comment, date_comment, id_post) VALUES(:author, :comment, :date_comment, :id_post');
         $req->bindValue(':author', $author, PDO::PARAM_STR);
         $req->bindValue(':comment', $comment, PDO::PARAM_STR);
         $req->bindValue(':date_comment', $date_comment, PDO::PARAM_STR);
+        $req->bindValue(':id_post', $id_post, PDO::PARAM_INT);
 
         return $req->execute();
     }

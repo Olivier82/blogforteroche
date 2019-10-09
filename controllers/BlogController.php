@@ -1,4 +1,7 @@
  <?php
+ require_once '../models/Post.php';
+ require_once '../models/Comment.php';
+
 
 class BlogController {
     private $viewPath;
@@ -44,18 +47,18 @@ class BlogController {
     }
 
     public function addComment() {
-        $date = json_decode(file_get_content('php://input'), true);
+        $data = json_decode(file_get_contents('php://input'), true);
         $data = (array)$data;
 
         header('Content-type: application/json');
 
         // Appel du model Comment
         $comment = new Comment();
-        $errors = $comments->validateComment($data);
+        $errors = $comment->validateComment($data);
 
         if (count($errors) > 0) {
             echo json_encode(array(
-                'errors' => $errprs,
+                'errors' => $errors,
             ));
 
             return $errors;
@@ -65,6 +68,7 @@ class BlogController {
         $result = $comment->createComment($data);
         $response = array ('result' => $result);
         echo json_encode($response);
+        var_dump($response);
 
         require $this->viewPath .'/blog/post.php';
     }

@@ -25,7 +25,8 @@
                         <h4>Ajouter un Commentaire</h4>
                     </div>
                     <div class="panel-body">
-                        <form action ="/post/addcomment" method="post" id="form-comment">
+                        <form action ="/post" method="post" id="form-comment">
+                        <input id="commentPostId" type="hidden" value="<?php echo $singlepost['id']; ?>" />
                             <div class="alert alert-danger authorError d-none" id="authorError" role="alert"></div>
                             <div class="alert alert-success d-none" id="commentSucces" role="alert"></div>
                                 <input type ="author" name="author" class="form-control" id="author" placeholder="Votre nom">

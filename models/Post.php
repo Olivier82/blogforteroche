@@ -109,7 +109,7 @@ class Post extends BaseModel {
         $req = $bdd->prepare('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr, content FROM posts WHERE id = :id');
         $req->bindValue(':id', $id, PDO::PARAM_INT);
          //Exécution de la requête
-         $req->execute();
+        $req->execute();
         return $req->fetch(PDO::FETCH_ASSOC);
     }
 }
