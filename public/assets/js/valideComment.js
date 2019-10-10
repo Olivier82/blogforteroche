@@ -6,7 +6,8 @@ var commentElt = document.getElementById('comment');
 var commentSuccess = document.getElementById('commentSuccess');
 var authorError = document.getElementById('authorError');
 var commentError = document.getElementById('commentError');
-var idPostElt = document.getElementById('postId');
+var idPostElt = document.getElementById('idPost');
+var errorsElt = document.getElementById('errors');
 
 validComment.addEventListener('click', function (e) {
     e.preventDefault();
@@ -61,5 +62,7 @@ validComment.addEventListener('click', function (e) {
     .catch(function() {
         spinner.classList.add('d-none');
         validComment.classList.remove('disabled');
+        errorsElt.classList.remove('d-none');
+        errorsElt.innerHTML = 'Une erreur est survenue !';
     })
 });

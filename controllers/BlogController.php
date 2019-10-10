@@ -52,7 +52,6 @@ class BlogController {
 
         header('Content-type: application/json');
 
-        // Appel du model Comment
         $comment = new Comment();
         $errors = $comment->validateComment($data);
 
@@ -65,11 +64,10 @@ class BlogController {
 
         }
 
-        $result = $comment->createComment($data);
-        $response = array ('result' => $result);
-        echo json_encode($response);
-
-        require $this->viewPath .'/blog/post.php';
+        echo json_encode(array(
+            'result' => $comment->createComment($data),
+        ));
+        require $this->viewPath . '/blog/post.php';
     }
 
 }
