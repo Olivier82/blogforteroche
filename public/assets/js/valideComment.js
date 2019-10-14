@@ -14,6 +14,7 @@ validComment.addEventListener('click', function (e) {
     var author = authorElt.value;
     var comment = commentElt.value;
     var idPost = parseInt(idPostElt.value, 10);
+    var reported = true;
 
     if (!authorElt.value) {
         authorError.classList.remove('d-none');
@@ -34,6 +35,7 @@ validComment.addEventListener('click', function (e) {
     axios.post(formComment.getAttribute('action'), {
         author: author,
         comment: comment,
+        reported: reported,
         idPost: idPost,
     })
     .then(function(response) {
@@ -56,7 +58,7 @@ validComment.addEventListener('click', function (e) {
                 });
         } else {
             commentSuccess.classList.remove('d-none');
-            commentSuccess.innerHTML = 'Commentaire ajouté avec succés.'
+            commentSuccess.innerHTML = 'Commentaire ajouté avec succés.';
         }
     })
     .catch(function() {

@@ -28,6 +28,11 @@ class BlogController {
     }
 
     public function postAction() {
+        $scripts = array(
+            'scripts' => array(
+                '/assets/js/valideComment.js'
+            ));
+        extract($scripts);
         require $this->viewPath . '/blog/post.php';
     }
 
@@ -66,8 +71,8 @@ class BlogController {
 
         echo json_encode(array(
             'result' => $comment->createComment($data),
-        ));
-        require $this->viewPath . '/blog/post.php';
+            ));
+        require $this->viewPath .'/blog/post.php';
     }
 
 }
