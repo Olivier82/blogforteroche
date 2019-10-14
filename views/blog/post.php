@@ -42,6 +42,14 @@
                             </button>
                             <hr>
                         </form>
+                        <ul class="media-list">
+                            <li class="media">
+                                <div class="media-body">
+                                    <div class="author_comment"><?php echo $listcomment['author']; ?></div>
+                                    <p></p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

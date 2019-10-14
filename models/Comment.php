@@ -32,7 +32,7 @@ class Comment extends BaseModel {
         $comment = trim(strip_tags($data['comment']));
         $date_comment = date("Y-m-d H:i:s");
         $id_post = intval($data['idPost']);
-        $reported = true;
+        $reported = $data['reported'];
 
         // Préparation de la requête d'ajout d'un commentaire
         $req = $bdd->prepare('INSERT INTO post_comment(author, comment, date_comment, reported, id_post) VALUES(:author, :comment, :date_comment, :reported, :id_post)');
@@ -43,6 +43,17 @@ class Comment extends BaseModel {
         $req->bindValue(':id_post', $id_post, PDO::PARAM_INT);
 
         return $req->execute();
+    }
+
+    // Affichage des commentaires
+
+    public function getComment() {
+        $bdd = $this->bddConnect();
+        // Préparation de la requête
+        $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\'), reported FROM post_comment WHERE id_post = ? ORDER BY date_comment DESC ');
+        $req->execute();
+        //Récupération des données
+        return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
 

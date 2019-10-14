@@ -75,4 +75,12 @@ class BlogController {
         require $this->viewPath .'/blog/post.php';
     }
 
+    //Récupération des commentaires
+    public function getComment() {
+        $comment = new Comment();
+        extract(array(
+            'listcomment' => $comment->getComment(),
+        ));
+        require $this->viewPath .'/blog/post.php';
+    }
 }

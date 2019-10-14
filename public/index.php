@@ -40,6 +40,11 @@ $router->map('POST', '/post', function() {
     $blogController->addComment();
 });
 
+$router->map('GET', '/post/[i:id]', function() {
+    $blogController = new blogController(VIEW_PATH);
+    $blogController->getComment();
+});
+
 $router->map('GET', '/admin', function() {
     require VIEW_PATH . '/admin/index.php';
 });
