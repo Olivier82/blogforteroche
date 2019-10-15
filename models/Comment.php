@@ -30,7 +30,7 @@ class Comment extends BaseModel {
         $bdd = $this->bddConnect();
         $author = trim(strip_tags($data['author']));
         $comment = trim(strip_tags($data['comment']));
-        $date_comment = date("Y-m-d H:i:s");
+        $date_comment = date('Y-m-d H:i:s');
         $id_post = intval($data['idPost']);
         $reported = $data['reported'];
 
@@ -51,10 +51,9 @@ class Comment extends BaseModel {
         $bdd = $this->bddConnect();
         // Préparation de la requête
         $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr, id_post FROM post_comment WHERE id_post = :id_post ORDER BY date_comment');
+        $req->bindValue(':id_post', $id_post, PDO::PARAM_INT);
         $req->execute();
         //Récupération des données
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
-
-
 }

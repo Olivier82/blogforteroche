@@ -27,27 +27,22 @@ class BlogController {
         require $this->viewPath . '/blog/about.php';
     }
 
-    public function postAction() {
-        $scripts = array(
-            'scripts' => array(
-                '/assets/js/valideComment.js'
-            ));
-        extract($scripts);
-        require $this->viewPath . '/blog/post.php';
-    }
-
     public function contactAction() {
-        require $this->viewPath .'/blog/contact.php';
+        require $this->viewPath . '/blog/contact.php';
     }
 
     public function singlePost(int $id) {
         $post = new Post();
-        extract( array(
+        $comment = new Comment();
+
+        extract(array(
             'singlepost' => $post->singlePost($id),
+            'listcomment' => $comment->getCommentById($id),
             'scripts'  => array(
                 '/assets/js/valideComment.js'
             )
         ));
+
         require $this->viewPath .'/blog/post.php';
     }
 
@@ -66,21 +61,10 @@ class BlogController {
             ));
 
             return $errors;
-
         }
 
         echo json_encode(array(
             'result' => $comment->createComment($data),
-            ));
-        require $this->viewPath .'/blog/post.php';
-    }
-
-    //Récupération des commentaires
-    public function getComment(int $id_post) {
-        $comment = new Comment();
-        extract(array(
-            'listcomment' => $comment->getCommentById($id_post),
         ));
-        require $this->viewPath .'/blog/post.php';
     }
 }
