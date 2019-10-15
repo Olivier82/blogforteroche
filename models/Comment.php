@@ -47,10 +47,10 @@ class Comment extends BaseModel {
 
     // Affichage des commentaires
 
-    public function getComment() {
+    public function getCommentById(int $id_post): array {
         $bdd = $this->bddConnect();
         // Préparation de la requête
-        $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\'), reported FROM post_comment WHERE id_post = ? ORDER BY date_comment DESC ');
+        $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr, id_post FROM post_comment WHERE id_post = :id_post ORDER BY date_comment');
         $req->execute();
         //Récupération des données
         return $req->fetchAll(PDO::FETCH_ASSOC);

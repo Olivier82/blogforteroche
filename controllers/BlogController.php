@@ -76,10 +76,10 @@ class BlogController {
     }
 
     //Récupération des commentaires
-    public function getComment() {
+    public function getComment(int $id_post) {
         $comment = new Comment();
         extract(array(
-            'listcomment' => $comment->getComment(),
+            'listcomment' => $comment->getCommentById($id_post),
         ));
         require $this->viewPath .'/blog/post.php';
     }

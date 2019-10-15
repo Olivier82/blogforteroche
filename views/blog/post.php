@@ -42,14 +42,18 @@
                             </button>
                             <hr>
                         </form>
+                        <?php
+                            foreach($listcomment as $value):
+                        ?>
                         <ul class="media-list">
                             <li class="media">
                                 <div class="media-body">
-                                    <div class="author_comment"><?php echo $listcomment['author']; ?></div>
+                                    <div class="author_comment"><?php echo $value['author']; ?></div>
                                     <p></p>
                                 </div>
                             </li>
                         </ul>
+                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>

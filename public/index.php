@@ -40,9 +40,9 @@ $router->map('POST', '/post', function() {
     $blogController->addComment();
 });
 
-$router->map('GET', '/post/[i:id]', function() {
+$router->map('GET', '/post/[i:id]', function($id_post) {
     $blogController = new blogController(VIEW_PATH);
-    $blogController->getComment();
+    $blogController->getComment($id_post);
 });
 
 $router->map('GET', '/admin', function() {
