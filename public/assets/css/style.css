@@ -61,6 +61,7 @@ h2.section-heading {
 
 h5.card-title {
     font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-weight: 700;
     font-size: 28px;
     text-align: center;
     color: #5ba79d;
@@ -87,7 +88,7 @@ h2.about-intro {
 
 .post-heading h1 {
     font-family: 'Lora',Arial, Helvetica, sans-serif;
-    font-style: bold;
+    font-weight: 700;
     font-size: 80px;
 }
 
@@ -148,6 +149,46 @@ h2.about-intro {
 
 #author {
     margin-bottom: 10px;
+}
+
+.media-list {
+    padding-left: 0;
+    list-style: none;
+}
+
+.comment-wrapper .media-list .media {
+    border-bottom: 1px dashed #5ba79d;
+    margin-bottom: 25px;
+}
+
+.media>.pull-left {
+    padding-right: 10px;
+}
+
+.comment-wrapper .media-list .media img {
+    width: 64px;
+    height: 64px;
+    border: 2px solid #33645e;
+    border-radius: 50%;
+}
+
+.author-comment {
+    color: #33645e;
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.date-comment {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    color: #777777;
+    font-size: 12px;
+    float: right;
+}
+
+.comment {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-size: 14px;
 }
 
 hr {

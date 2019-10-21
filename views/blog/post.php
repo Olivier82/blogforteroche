@@ -47,9 +47,13 @@
                         ?>
                         <ul class="media-list">
                             <li class="media">
+                                <div class='pull-left'>
+                                    <img src="../assets/img/avatar.png" alt="img-circle">
+                                </div>
                                 <div class="media-body">
-                                    <div class="author_comment"><?php echo $value['author']; ?></div>
-                                    <p></p>
+                                    <div class="date-comment"><?php echo $value['date_comment_fr']; ?></div>
+                                    <div class="author-comment"><?php echo $value['author']; ?></div>
+                                    <p class="comment"><?php echo $value['comment']; ?></p>
                                 </div>
                             </li>
                         </ul>
