@@ -9,6 +9,7 @@ var commentError = document.getElementById('commentError');
 var idPostElt = document.getElementById('idPost');
 var errorsElt = document.getElementById('errors');
 
+
 validComment.addEventListener('click', function (e) {
     e.preventDefault();
     var author = authorElt.value;
@@ -40,7 +41,7 @@ validComment.addEventListener('click', function (e) {
     })
     .then(function(response) {
         spinner.classList.add('d-none');
-        validForm.classList.remove('disabled');
+        validComment.classList.remove('disabled');
         if (response.data.errors) {
             var msgErrors = response.data.errors;
 
@@ -57,8 +58,7 @@ validComment.addEventListener('click', function (e) {
                     }
                 });
         } else {
-            commentSuccess.classList.remove('d-none');
-            commentSuccess.innerHTML = 'Commentaire ajouté avec succés.';
+            window.location.reload();
         }
     })
     .catch(function() {
@@ -66,5 +66,5 @@ validComment.addEventListener('click', function (e) {
         validComment.classList.remove('disabled');
         errorsElt.classList.remove('d-none');
         errorsElt.innerHTML = 'Une erreur est survenue !';
-    })
+    });
 });

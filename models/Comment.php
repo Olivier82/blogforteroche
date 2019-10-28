@@ -14,11 +14,11 @@ class Comment extends BaseModel {
         $author = trim(strip_tags($data['author']));
         $comment = trim(strip_tags($data['comment']));
 
-        if (strlen($author) <= 3) {
+        if (strlen($author) <= 2) {
             $errors['author'] = 'Le nom ne comporte pas assez de caractères !';
         }
 
-        if (strlen($comment) <= 10) {
+        if (strlen($comment) <= 3) {
             $errors['comment'] = 'Le commentaire ne comporte pas assez de caractères !';
         }
 
@@ -47,10 +47,10 @@ class Comment extends BaseModel {
 
     // Affichage des commentaires
 
-    public function getCommentById(int $id_post): array {
+    public function getCommentByPostId(int $id_post): array {
         $bdd = $this->bddConnect();
         // Préparation de la requête
-        $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr, id_post FROM post_comment WHERE id_post = :id_post ORDER BY date_comment');
+        $req = $bdd->prepare('SELECT id, author, comment, DATE_FORMAT(date_comment, \'%d/%m/%Y\') AS date_comment_fr, id_post FROM post_comment WHERE id_post = :id_post ORDER BY date_comment DESC');
         $req->bindValue(':id_post', $id_post, PDO::PARAM_INT);
         $req->execute();
         //Récupération des données

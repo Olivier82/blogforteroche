@@ -37,7 +37,7 @@ class BlogController {
 
         extract(array(
             'singlepost' => $post->singlePost($id),
-            'listcomment' => $comment->getCommentById($id),
+            'listcomment' => $comment->getCommentByPostId($id),
             'scripts'  => array(
                 '/assets/js/valideComment.js'
             )
