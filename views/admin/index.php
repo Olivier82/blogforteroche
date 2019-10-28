@@ -28,7 +28,7 @@
                         <td><?php echo $value['date_post_fr'];?></td>
                         <td><?php echo $value['title']; ?></td>
                         <td>
-                            <a href="editpost/<?php echo $value['id']; ?>" class="btn btn-success-index">Editer</a>
+                            <a href="/admin/editpost/<?php echo $value['id']; ?>" class="btn btn-success-index">Editer</a>
                             <button type="button" class="btn btn-danger-index btnOpenDeleteModal" data-id="<?php echo $value['id'] ?>" data-toggle="modal" data-target="#deletePostConfirm">
                                 Supprimer
                             </button>

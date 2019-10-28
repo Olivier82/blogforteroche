@@ -39,7 +39,8 @@ class BlogController {
             'singlepost' => $post->singlePost($id),
             'listcomment' => $comment->getCommentByPostId($id),
             'scripts'  => array(
-                '/assets/js/valideComment.js'
+                '/assets/js/valideComment.js',
+                '/assets/js/reportedComment.js'
             )
         ));
 
@@ -66,5 +67,12 @@ class BlogController {
         echo json_encode(array(
             'result' => $comment->createComment($data),
         ));
+    }
+
+    public function reportedComment() {
+        $comment = new Comment();
+        $result = $comment->alertComment($id);
+        var_dump($result);
+        require $this->viewPath .'/blog/post.php';
     }
 }

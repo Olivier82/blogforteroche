@@ -51,11 +51,12 @@
                                     <img src="../assets/img/avatar.png" alt="img-circle">
                                 </div>
                                 <div class="media-body">
+                                <input id="idComment" type="hidden" value="<?php echo $value['id']; ?>" />
                                     <div class="date-comment"><?php echo $value['date_comment_fr']; ?></div>
                                     <div class="author-comment"><?php echo $value['author']; ?></div>
                                     <p class="comment"><?php echo $value['comment']; ?></p>
                                     <div class="report">
-                                        <a href="#">Signaler le commentaire</a>
+                                        <a href="#"  class="badge badge-danger" id="reportedComment">Signaler</a>
                                     </div>
                                 </div>
                             </li>

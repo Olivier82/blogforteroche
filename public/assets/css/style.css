@@ -112,8 +112,7 @@ h2.about-intro {
     margin: 50px;
 }
 .comment-wrapper .panel-body {
-    max-height: 650px;
-    overflow: auto;
+    overflow: hidden;
 }
 
 .panel {
@@ -202,8 +201,11 @@ hr {
 .report a {
     font-family: 'Lora',Arial, Helvetica, sans-serif;
     font-size: 12px;
-    color: #a72424;
     float: right;
+}
+
+.badge-danger {
+    margin-bottom: 0.5rem;
 }
 
 /**** Administration ****/
@@ -219,7 +221,7 @@ hr {
 .index-admin-heading {
     font-family: 'Lora', Arial, Helvetica, sans-serif;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 26px;
     margin: auto;
     padding: 4rem 0 2rem;
 }

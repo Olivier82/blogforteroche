@@ -46,7 +46,6 @@ class Comment extends BaseModel {
     }
 
     // Affichage des commentaires
-
     public function getCommentByPostId(int $id_post): array {
         $bdd = $this->bddConnect();
         // Préparation de la requête
@@ -55,5 +54,13 @@ class Comment extends BaseModel {
         $req->execute();
         //Récupération des données
         return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    // Signalement d'un commentaire
+    public function alertComment($id) {
+        $bdd = $this->bddConnect();
+        //Préparation de la requête
+        $req = $bdd->prepare('UPDATE post_comment SET reported = 0 WHERE id = :id');
+        return $req->execute($id);
     }
 }
