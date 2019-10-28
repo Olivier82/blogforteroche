@@ -54,6 +54,9 @@
                                     <div class="date-comment"><?php echo $value['date_comment_fr']; ?></div>
                                     <div class="author-comment"><?php echo $value['author']; ?></div>
                                     <p class="comment"><?php echo $value['comment']; ?></p>
+                                    <div class="report">
+                                        <a href="#">Signaler le commentaire</a>
+                                    </div>
                                 </div>
                             </li>
                         </ul>

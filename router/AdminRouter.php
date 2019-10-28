@@ -11,7 +11,8 @@ class AdminRouter {
 
     public function loadAdminRoute() {
         $this->altoRouter->map('GET', '/admin', function() {
-            require VIEW_PATH . '/admin/index.php';
+            $adminController = new AdminController();
+            $adminController->fiveLastPosts();
         });
 
         $this->altoRouter->map('GET', '/admin/addpost', function() {

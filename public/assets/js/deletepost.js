@@ -18,5 +18,6 @@ btnDeletePost.addEventListener('click', function() {
     axios.post(url)
         .then(function(response) {
             console.log(response);
+            location.reload();
         })
 })

@@ -38,7 +38,7 @@
                         <a class="nav-link" href="/admin/listingpost">Tous les articles</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/admin/allcomments">Commentaires</a>
+                        <a class="nav-link" href="/admin/listingcomments">Commentaires</a>
                     </li>
                 </ul>
                 </div>

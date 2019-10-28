@@ -15,7 +15,7 @@ validComment.addEventListener('click', function (e) {
     var author = authorElt.value;
     var comment = commentElt.value;
     var idPost = parseInt(idPostElt.value, 10);
-    var reported = true;
+    var reported = 1;
 
     if (!authorElt.value) {
         authorError.classList.remove('d-none');

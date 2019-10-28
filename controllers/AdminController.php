@@ -54,6 +54,18 @@ class AdminController {
         require_once('../views/admin/listing_post.php');
     }
 
+    // Récupération 5 derniers articles index admin
+    public function fiveLastPosts() {
+        $post = new Post();
+        extract(array(
+            'lastposts' => $post->getLastPosts(),
+            'scripts' => array(
+                '/assets/js/deletepost.js'
+            )
+        ));
+        require_once('../views/admin/index.php');
+    }
+
     // Update des articles
     public function getPost(int $id) {
         $post = new Post();

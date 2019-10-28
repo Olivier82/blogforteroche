@@ -58,6 +58,20 @@ class Post extends BaseModel {
         return $req->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    //Récupération 5 derniers articles
+    public function getLastPosts(): array {
+        $bdd = $this->bddConnect();
+
+        // Préparation de la requête
+        $req = $bdd->query('SELECT id, title, DATE_FORMAT(date_post, \'%d/%m/%Y\') AS date_post_fr FROM posts ORDER BY date_post DESC LIMIT 0, 5');
+
+        // Exécution de la requéte
+        $req->execute();
+
+        // Récupération des données
+        return $req->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     //Mise à jour d'un article
     public function getPostById(int $id): array {
         $bdd = $this->bddConnect();

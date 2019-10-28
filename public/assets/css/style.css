@@ -199,6 +199,13 @@ hr {
     border-top: 1px solid #616e7d;
 }
 
+.report a {
+    font-family: 'Lora',Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    color: #a72424;
+    float: right;
+}
+
 /**** Administration ****/
 
 .admin-heading {
@@ -207,6 +214,14 @@ hr {
     font-size: 36px;
     margin: auto;
     padding: 2rem 0 4rem;
+}
+
+.index-admin-heading {
+    font-family: 'Lora', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 22px;
+    margin: auto;
+    padding: 4rem 0 2rem;
 }
 
 /**** Formulaire création d'un article ****/
@@ -247,6 +262,42 @@ hr {
 }
 
 .submitPost:hover {
+    color: #ffffff;
+}
+
+/**** Tableau index ****/
+
+.tr-table-index {
+    font-size: 12px;
+}
+
+.th-table-index {
+    font-size: 14px;
+}
+
+.btn-success-index {
+    background-color: #5ba79d;
+    font-size: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    margin-left: 0.3rem;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-success-index:hover {
+    color: #ffffff;
+}
+
+.btn-danger-index {
+    background-color: #dc3545;
+    font-size: 0.6rem;
+    padding: 0.4rem 1.2rem;
+    margin-left: 0.3rem;
+    color: #ffffff;
+    border: none;
+}
+
+.btn-danger-index:hover {
     color: #ffffff;
 }
 
