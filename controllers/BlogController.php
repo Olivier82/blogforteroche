@@ -70,12 +70,19 @@ class BlogController {
     }
 
     public function reportedComment($id) {
+        $data = json_decode(file_get_contents('php://input'), true);
+        $data = (array)$data;
+
+        header('Content-type: application/json');
+
         $scripts = array(
             'scripts' => array(
                 '/assets/js/reportedComment.js'
             ));
         extract($scripts);
         $comment = new Comment();
-        $reportedComment = $comment->alertComment($id);
+        echo json_encode(array(
+            'reportedComment' => $comment->alertComment($id),
+        ));
     }
 }

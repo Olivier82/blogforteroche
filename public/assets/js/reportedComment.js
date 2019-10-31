@@ -15,14 +15,14 @@ document.querySelectorAll('.btnOpenReportCommentModal')
             var selectedId = selectedIdEl.value
             var baseUrlReportedComment = baseUrlReportedCommentEl.value
             var url = baseUrlReportedComment + selectedId
-            var idComment = parseInt(idCommentElt.value, 10);
+            var idComment = parseInt(idCommentElt.value, 10)
             var reported = 0
 
         axios.post(url, {
-            reported: reported,
             idComment: idComment,
+            reported: reported,
         })
             .then(function(response) {
-                console.log(response.data);
+                console.log(response);
             })
 })

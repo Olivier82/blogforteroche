@@ -62,7 +62,6 @@ class Comment extends BaseModel {
         //Préparation de la requête
         $req = $bdd->prepare('UPDATE post_comment SET reported = 0 WHERE id = :id');
         $req->bindParam(':id',$id, PDO::PARAM_INT);
-        $req->bindParam(':reported', $reported, PDO::PARAM_INT);
         return $req->execute();
     }
 }
