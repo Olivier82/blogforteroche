@@ -1,15 +1,15 @@
 <?php require VIEW_PATH . '/template/header_admin.php'; ?>
 <div class="container">
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-4 text-center">
+        <div class="col-lg-6 col-md-6 text-center">
             <h2 class="index-admin-heading">5 derniers articles</h2>
         </div>
-        <div class="col-lg-6 col-md-6 col-xs-4 text-center">
+        <div class="col-lg-6 col-md-6 col-sm-4 text-center">
             <h2 class="index-admin-heading">Commentaires Signalés</h2>
         </div>
     </div>
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-xs-4">
+        <div class="col-lg-6 col-md-6">
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr class="tr-table-index">

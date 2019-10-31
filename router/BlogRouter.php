@@ -35,9 +35,9 @@ class BlogRouter {
             $blogController->addComment();
         });
 
-        $this->altoRouter->map('POST', '/post/reportedcomment', function() {
+        $this->altoRouter->map('POST', '/post/reportedcomment/[i:id]', function($id) {
             $blogController = new BlogController(VIEW_PATH);
-            $blogController->reportedComment();
+            $blogController->reportedComment($id);
         });
     }
 }

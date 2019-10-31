@@ -56,12 +56,31 @@
                                     <div class="author-comment"><?php echo $value['author']; ?></div>
                                     <p class="comment"><?php echo $value['comment']; ?></p>
                                     <div class="report">
-                                        <a href="#"  class="badge badge-danger" id="reportedComment">Signaler</a>
+                                        <a href="#"  class="badge badge-danger btnOpenReportCommentModal" data-id="<?php echo $value['id']; ?>" data-toggle="modal" data-target="#reportedCommentConfirm">Signaler</a>
                                     </div>
                                 </div>
                             </li>
                         </ul>
                         <?php endforeach; ?>
+                    </div>
+                    <input id="baseUrlReportedComment" type="" value="/post/reportedcomment/" />
+                    <input id="selectedId" type="" />
+                    <!-- Modal confirmation signalement d'un commentaire -->
+                    <div class="modal fade" id="reportedCommentConfirm" role="dialog">
+                        <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5>Signaler un commentaire</h5>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Voulez vous signaler ce commentaire ? </p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="reported-comment" class="btn btn-danger" data-dismiss="modal">Confirmer</button>
+                                        <button type="button" class="btn btn-success" data-dismiss="modal">Annuler</button>
+                                    </div>
+                                </div>
+                        </div>
                     </div>
                 </div>
             </div>

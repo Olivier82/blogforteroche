@@ -69,10 +69,13 @@ class BlogController {
         ));
     }
 
-    public function reportedComment() {
+    public function reportedComment($id) {
+        $scripts = array(
+            'scripts' => array(
+                '/assets/js/reportedComment.js'
+            ));
+        extract($scripts);
         $comment = new Comment();
-        $result = $comment->alertComment($id);
-        var_dump($result);
-        require $this->viewPath .'/blog/post.php';
+        $reportedComment = $comment->alertComment($id);
     }
 }

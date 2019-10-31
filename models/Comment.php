@@ -57,10 +57,12 @@ class Comment extends BaseModel {
     }
 
     // Signalement d'un commentaire
-    public function alertComment($id) {
+    public function alertComment(int $id) {
         $bdd = $this->bddConnect();
         //Préparation de la requête
         $req = $bdd->prepare('UPDATE post_comment SET reported = 0 WHERE id = :id');
-        return $req->execute($id);
+        $req->bindParam(':id',$id, PDO::PARAM_INT);
+        $req->bindParam(':reported', $reported, PDO::PARAM_INT);
+        return $req->execute();
     }
 }

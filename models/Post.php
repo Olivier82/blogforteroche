@@ -103,7 +103,7 @@ class Post extends BaseModel {
     public function deletePost($id) {
         $bdd = $this->bddConnect();
         $req = $bdd->prepare('DELETE FROM posts WHERE id = :id LIMIT 1');
-        $req->bindParam(':id',$id, PDO::PARAM_STR);
+        $req->bindParam(':id',$id, PDO::PARAM_INT);
         return $req->execute();
     }
 
